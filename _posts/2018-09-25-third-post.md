@@ -1,0 +1,14 @@
+---
+title: Hello World!!!
+author: LeeMir
+layout: post
+---
+## Git Bash - error: failed to push some refs to 'https://github.com/...
+
+
+Git Bash를 이용하여 파일들을 commit 후 push 하던 도중 error: failed to push some refs to ~ 라는 에러가 발생했다.<br>
+이 때, Git Bash에 다음과 같은 명령어를 입력해주면 강제로 push가 가능하다.
+<br>
+`git push -u origin +master`
+<br>
+이 글도 이 명령어를 통해 업로드하였다.
