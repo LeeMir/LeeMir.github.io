@@ -1,5 +1,5 @@
 ---
-title: Hello World2!
+title: Hello World!!
 author: LeeMir
 layout: post
 ---
@@ -16,4 +16,3 @@ layout: post
 `git remote -v` //현재 리모트 저장소 확인
 <br>
 `git push` // github 저장소에 commit된 파일을 밀어넣음
-
