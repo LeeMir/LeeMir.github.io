@@ -1,9 +1,9 @@
 ---
-title: [Linux] 리눅스 명령어
+title: Linux 1
 author: LeeMir
 layout: post
 ---
-##[Linux] 1. 리눅스 명령어
+## 리눅스 명령어
 
 `ls` // 디렉토리의 내용을 출력한다<br>
 `setuid` `setgid` // root의 권한을 얻고싶을 때<br>

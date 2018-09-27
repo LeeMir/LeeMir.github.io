@@ -1,10 +1,10 @@
 ---
-title: [Linux] 리눅스 명령어
+title: Linux 2
 author: LeeMir
 layout: post
 ---
 
-##[Linux] 2. 텍스트 에디터
+##텍스트 에디터
 `gedit file_name [&]` // Gnod 데스크탑 환경을 위한 텍스트 편집기(& : Background에서 실행)<br>
 `vi file_name` // Vi 텍스트 편집기
 - - -
