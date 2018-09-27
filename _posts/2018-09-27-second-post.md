@@ -3,19 +3,20 @@ title: [Linux] 리눅스 명령어
 author: LeeMir
 layout: post
 ---
-##[Linux] 2. 텍스트 에디터
-`gedit file_name [&]` // Gnod 데스크탑 환경을 위한 텍스트 편집기(& : Background에서 실행)
-`vi file_name` // 
 
+##[Linux] 2. 텍스트 에디터
+`gedit file_name [&]` // Gnod 데스크탑 환경을 위한 텍스트 편집기(& : Background에서 실행)<br>
+`vi file_name` // Vi 텍스트 편집기
+- - -
 
 #### Vi(Visual Editor)
-<p>버클리의 BSD 유닉스용으로 개발됨. 리눅스 환경에서 가장 많이 사용하는 텍스트 편집기로, 명령 모드(Command Mode)와 삽입 모드(Insert Mode) 두가지 모드가 존재함.</p>
-<p>`i` `a` // Command Mode -> Insert Mode
-`x` `dw` // 한글자 지움
-`dd` // 한줄 지움
-`.` // 가장 최근에 한 명령을 실행
-`h` `j` `k` `l` // h왼쪽 j아래 k위 l오른쪽 커서 이동
-`:q` // 편집기 종료
-`:wq` // 저장 후 종료
-`:s/orgword/newword/option` // orgword를 newword로 변경(substitute), option에 g를 넣으면 파일에서 모든 orgword를 변경
-`yy` `p` // yy 한줄 복사 p 붙여넣기</p>
+버클리의 BSD 유닉스용으로 개발됨. 리눅스 환경에서 가장 많이 사용하는 텍스트 편집기로, 명령 모드(Command Mode)와 삽입 모드(Insert Mode) 두가지 모드가 존재함.<br>
+`i` `a` // Command Mode -> Insert Mode<br>
+`x` `dw` // 한글자 지움<br>
+`dd` // 한줄 지움<br>
+`.` // 가장 최근에 한 명령을 실행<br>
+`h` `j` `k` `l` // h왼쪽 j아래 k위 l오른쪽 커서 이동<br>
+`:q` // 편집기 종료<br>
+`:wq` // 저장 후 종료<br>
+`:s/orgword/newword/option` // orgword를 newword로 변경(substitute), option에 g를 넣으면 파일에서 모든 orgword를 변경<br>
+`yy` `p` // yy 한줄 복사 p 붙여넣기<br>
