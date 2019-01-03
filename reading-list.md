@@ -6,6 +6,6 @@ icon: fa-book
 order: 3
 ---
 1. GitHub - [github.com](https://github.com)
-2. WebHacking - [webhacking.kr](http://webhacking.kr)
+2. WebHacking - [webhacking.kr](https://webhacking.kr)
 3. BaekJoon Online Judge - [acmicpc.net](https://www.acmicpc.net)
-4. 
+4. W3School - [w3schools.com](https://www.w3schools.com)
