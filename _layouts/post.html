@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
+{%- assign _posts = site.posts | sort: 'date' | reverse -%}
 {%- include header.html scrolly_nav=_posts -%}
 <!-- Main -->
 <div id="main">
 	<!-- Post -->
-	<article class="shade-two">kk
+	<article class="shade-two">
 	  <div class="container">
 			<header>
 				<h2>{{- page.title -}}</h2>
