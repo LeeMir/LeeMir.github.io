@@ -45,15 +45,15 @@ url: "https://leemir.github.io" # the base hostname & protocol for your site
 
 # Social settings
 # Make sure to include the full url including protocol, e.g. https://github.com/chrisbobbe
-twitter_url:
+#twitter_url:
 facebook_url: https://www.facebook.com/manofgodmj
-googleplus_url:
+#googleplus_url:
 instagram_url:
-linkedin_url:
+#linkedin_url:
 github_url: https://github.com/LeeMir
-pinterest_url:
-slack_url:
-dribbble_url:
+#pinterest_url:
+#slack_url:
+#dribbble_url:
 
 # Google Analytics Tracking ID goes here:
 google_analytics:
