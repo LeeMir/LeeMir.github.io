@@ -5,3 +5,4 @@
 ![Prologue Theme](assets/images/screenshot.png "Prologue Theme Screenshot")
 
 This is MIR's programming study blog using "Prologue"(Jekyll Theme)
+
