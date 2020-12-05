@@ -9,6 +9,7 @@ layout: default
 		{%- include section.html title=page.title photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
 	{%- endif -%}
 	<!-- projects List -->
+	{%- for category in site.categories.project}
 	{%- for _project in _projects -%}
 		{%- capture _title -%}
 			<a href="{{- _project.url | absolute_url -}}">{{- _project.title -}}</a>
@@ -21,5 +22,6 @@ layout: default
 		{%- capture _link -%}<a href="{{- _project.url | absolute_url -}}">read more</a>{%- endcapture -%}
 		{%- assign _content = _excerpt | append: _link -%}
 		{%- include section.html title=_title subtitle=_subtitle content=_content -%}
+	{%- endfor -%}
 	{%- endfor -%}
 </div>
