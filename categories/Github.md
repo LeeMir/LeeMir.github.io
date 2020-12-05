@@ -1,4 +1,3 @@
-```markdown
 ---
 
 layout: category
@@ -6,5 +5,3 @@ layout: category
 title: Github
 
 ---
-```
-
