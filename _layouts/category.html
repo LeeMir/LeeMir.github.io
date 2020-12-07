@@ -2,16 +2,15 @@
 layout: default
 ---
 <!--{%- assign _posts = site.posts | sort: 'date' | reverse -%}-->
-{% assign category = page.title %}
+{%- assign category = page.title -%}
 {%- include header.html <!--scrolly_nav=_posts--> -%}
 <!-- Main -->
 <div id="main">
-	<!--{%- if page.content != "" -%}
+	{%- if page.content != "" -%}
 		{%- include section.html title=page.title photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
-	{%- endif -%}-->
+	{%- endif -%}
 	<!-- Posts List -->
 	{%- for _post in site.categories.category -%}
-<!--		{%- for _post in _posts -%} -->
 		{%- capture _title -%}
 			<a href="{{- _post.url | absolute_url -}}">{{- _post.title -}}</a>
 		{%- endcapture -%}
@@ -23,6 +22,5 @@ layout: default
 		{%- capture _link -%}<a href="{{- _post.url | absolute_url -}}">read more</a>{%- endcapture -%}
 		{%- assign _content = _excerpt | append: _link -%}
 		{%- include section.html title=_title subtitle=_subtitle content=_content -%}
-<!--	{%- endfor -%}-->
 	{%- endfor -%}
 </div>
