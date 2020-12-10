@@ -1,3 +1,22 @@
 ---
-layout: page
+layout: default
+title: Category
 ---
+
+{%- include header.html -%}
+
+<!-- Main -->
+<div id="main">
+	<!-- Page -->
+	<article class="shade-two">
+	  <div class="container">
+			<header>
+				<h2>{{- page.title -}}</h2>
+				{%- if page.subtitle -%}<p>{{- page.subtitle -}}</p>{%- endif -%}
+			</header>
+            <a href="/github.html">Github</a>
+            <a href="/html.html">HTML</a>
+            <a href="/linux.html">Linux</a>
+	  </div>
+	</article>
+</div>
