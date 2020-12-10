@@ -10,8 +10,8 @@ layout: default
 		{%- include section.html title=page.title photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
 	{%- endif -%}
 	<!-- Posts List -->
-	<a>{{- page.title -}}</a>
-	<a>{{- cate -}}</a>
+	<!--<a>{{- page.title -}}</a>
+	<a>{{- cate -}}</a>-->
 	{%- for _post in site.categories[cate] -%}
 		{%- capture _title -%}
 			<a href="{{- _post.url | absolute_url -}}">{{- _post.title -}}</a>
