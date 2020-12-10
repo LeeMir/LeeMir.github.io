@@ -3,7 +3,7 @@ layout: default
 ---
 <!--{%- assign _posts = site.posts | sort: 'date' | reverse -%}-->
 {%- assign cate = page.title -%}
-{%- include header.html scrolly_nav=_posts -%}
+{%- include header.html scrolly_nav=site.categories[cate] -%}
 <!-- Main -->
 <div id="main">
 	{%- if page.content != "" -%}
