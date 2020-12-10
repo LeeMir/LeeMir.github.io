@@ -3,7 +3,7 @@ layout: default
 ---
 <!--{%- assign _posts = site.posts | sort: 'date' | reverse -%}-->
 {%- assign cate = page.title -%}
-{%- include header.html <!--scrolly_nav=_posts--> -%}
+{%- include header.html scrolly_nav=_posts -%}
 <!-- Main -->
 <div id="main">
 	{%- if page.content != "" -%}
@@ -12,7 +12,7 @@ layout: default
 	<!-- Posts List -->
 	{%- for _post in site.categories.cate -%}
 		{%- capture _title -%}
-			<a href="{{- _post.url | absolute_url -}}">{{- page.title <!--_post.title--> -}}</a>
+			<a href="{{- _post.url | absolute_url -}}">{{- _post.title -}}</a>
 		{%- endcapture -%}
 		{%- capture _subtitle -%}
 			{% if _post.author -%}{{- _post.author }} | {% endif %}
