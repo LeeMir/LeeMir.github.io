@@ -12,7 +12,7 @@ layout: default
 	<!-- Posts List -->
 	<a>{{- page.title -}}</a>
 	<a>{{- cate -}}</a>
-	{%- for _post in site.categories.cate -%}
+	{%- for _post in site.categories[cate] -%}
 		{%- capture _title -%}
 			<a href="{{- _post.url | absolute_url -}}">{{- _post.title -}}</a>
 		{%- endcapture -%}
