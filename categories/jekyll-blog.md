@@ -2,7 +2,7 @@
 
 layout: category
 
-title: jekyll
+title: jekyll-blog
 
 hide: true
 ---
