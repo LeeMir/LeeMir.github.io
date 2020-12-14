@@ -6,7 +6,7 @@
 
 This is MIR's programming study blog using "Prologue"(Jekyll Theme)
 
-## Blog Directory
+## Directory
 ```
 / ┬ _includes ┬ footer.html
   │           ├ google_analytics.html
@@ -46,4 +46,12 @@ This is MIR's programming study blog using "Prologue"(Jekyll Theme)
   ├ reading-list.md
   └ README.md
 ```
+
+
 ## Thanks to
+
+* Jekyll
+* ChrisBobbe ( Contributor of jekyll-theme-prologue )
+* Drakmyth ( Contributor of jekyll-theme-prologue )
+* pajasevi ( Developer of CSSnowflakes )
+
