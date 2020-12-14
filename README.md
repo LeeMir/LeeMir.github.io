@@ -22,8 +22,12 @@ This is MIR's programming study blog using "Prologue"(Jekyll Theme)
   │          ├ home.html
   │          ├ page.html
   │          └ post.html
-  ├ _posts - a lot of (yyyy-mm-dd-nn-post.md)
-  ├ _sass  - (skip)
+  ├ _posts - {a lot of (yyyy-mm-dd-nn-post.md)}
+  ├ _sass  ┬ libs ┬ _functions.scss
+  │        │      ├ _mixins.scss
+  │        │      ├ _skel.scss
+  │        │      └ _vars.scss
+  │        └ jekyll-theme-prologue.scss
   ├ _sections ┬ about-me.html
   │           ├ contact.html
   │           ├ intro.html
