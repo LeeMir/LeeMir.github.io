@@ -34,7 +34,12 @@ This is MIR's programming study blog using "Prologue"(Jekyll Theme)
   │           ├ portfolio.html
   │           └ welcome-to-mir-yolo.md
   ├ assets - (skip)
-  ├ category
+  ├ categories ┬ github.md
+  │            ├ html.md
+  │            ├ linux.md
+  │            ├ jekyll-blog.md
+  │            ├ project.md
+  │            └ index.html
   ├ assets ┬ css   - (skip)
   │        ├ img   - (skip)
   │        ├ js    - (skip)
