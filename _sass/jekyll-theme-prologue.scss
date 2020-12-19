@@ -438,23 +438,24 @@
 		cursor: pointer;
 		@include vendor('background-image', ('linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15))', 'url("images/overlay.png")'));
 		@include vendor('transition', 'background-color 0.35s ease-in-out');
+		&:hover {
+			background-color: #9ececc;
+		}
+		&:active {
+			background-color: #7eaeac;
+		}
 
 	}
 	.button[target=Mir] {
 		background-color: #E27689;
-	}
-	.button[target=Mir]:hover {
+		&:hover {
 			background-color: #F28e9c;
-	}
-	.button[target=Mir]:active {
+		}
+		&:active {
 			background-color: #D26e7c;
+		}
 	}
-	.button:hover {
-		background-color: #9ececc;
-	}
-	.button:active {
-		background-color: #7eaeac;
-	}
+	
 	
 
 
