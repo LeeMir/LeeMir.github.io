@@ -20,6 +20,7 @@
 {%- else -%}
 	{%- assign _photo = '' -%}
 	{%- capture _class -%}shade-{%- cycle 'two', 'three', 'four', 'three' -%}{%- endcapture -%}
+	{%- capture _style -%}{%- endcapture -%}
 {%- endif -%}
 
 {%- if include.auto-header == 'none' -%}
