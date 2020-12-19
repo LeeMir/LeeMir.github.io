@@ -443,10 +443,10 @@
 	.button[target=Mir] {
 		background-color: #E27689;
 	}
-	.button:hover[target=Mir] {
+	.button[target=Mir]:hover {
 			background-color: #F28e9c;
 	}
-	.button:active[target=Mir] {
+	.button[target=Mir]:active {
 			background-color: #D26e7c;
 	}
 	.button:hover {
