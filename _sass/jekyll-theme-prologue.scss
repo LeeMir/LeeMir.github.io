@@ -439,37 +439,21 @@
 		@include vendor('background-image', ('linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15))', 'url("images/overlay.png")'));
 		@include vendor('transition', 'background-color 0.35s ease-in-out');
 
-		&:hover {
-			background-color: #9ececc;
-		}
-
-		&:active {
-			background-color: #7eaeac;
-		}
 	}
-	input[type="button"],
-	input[type="submit"],
-	input[type="reset"],
-	button,
-	.buttonMir {
-		position: relative;
-		display: inline-block;
-		border-radius: 0.35em;
-		color: #fff !important;
-		text-decoration: none;
-		padding: 0.75em 2.5em 0.75em 2.5em;
-		background-color: #E27689;;
-		border: 0;
-		cursor: pointer;
-		@include vendor('background-image', ('linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15))', 'url("images/overlay.png")'));
-		@include vendor('transition', 'background-color 0.35s ease-in-out');
-		&:hover {
+	.button:hover {
+		background-color: #9ececc;
+	}
+	.button:active {
+		background-color: #7eaeac;
+	}
+
+	.button:hover[target] {
 			background-color: #F28e9c;
 		}
-		&:active {
+	.button:active[target] {
 			background-color: #D26e7c;
 		}
-	}
+
 
 /* Item */
 
