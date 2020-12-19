@@ -440,19 +440,22 @@
 		@include vendor('transition', 'background-color 0.35s ease-in-out');
 
 	}
+	.button[target=Mir] {
+		background-color: #E27689;
+	}
+	.button:hover[target=Mir] {
+			background-color: #F28e9c;
+	}
+	.button:active[target=Mir] {
+			background-color: #D26e7c;
+	}
 	.button:hover {
 		background-color: #9ececc;
 	}
 	.button:active {
 		background-color: #7eaeac;
 	}
-
-	.button:hover[target=Mir] {
-			background-color: #F28e9c;
-		}
-	.button:active[target=Mir] {
-			background-color: #D26e7c;
-		}
+	
 
 
 /* Item */
