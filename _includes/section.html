@@ -13,9 +13,10 @@
 
 {%- if include.photo and include.photo-alt -%}
 	{%- capture _photo -%}
-		<img src="{{- include.photo | relative_url -}}" alt="{{- include.photo-alt -}}" class="back" style="padding:12em 0;">
+		<img src="{{- include.photo | relative_url -}}" alt="{{- include.photo-alt -}}" class="back">
 	{%- endcapture -%}
 	{%- assign _class = 'shade-one cover dark' -%}
+	{%- assign _style = 'padding:12em 0;' -%}
 {%- else -%}
 	{%- assign _photo = '' -%}
 	{%- capture _class -%}shade-{%- cycle 'two', 'three', 'four', 'three' -%}{%- endcapture -%}
@@ -38,7 +39,7 @@
 	{%- endcapture -%}
 {%- endif -%}
 
-<section id="{{- _slug -}}" class="{{- _class -}}">
+<section id="{{- _slug -}}" class="{{- _class -}}" style="{{- _style -}}">
   <div class="container">
     {{- _photo -}}
     {{- _heading -}}
