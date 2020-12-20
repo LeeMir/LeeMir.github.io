@@ -30,4 +30,7 @@
   {%- if site.email -%}
   <li><a href="mailto:{{- site.email -}}" class="icon fa-envelope"><span class="label">Email</span></a></li>
   {%- endif -%}
+  {%- if site.tistory_url -%}
+  <li><a href="{{- site.tistory_url -}}" class="icon-b fa-tistory"><span class="label">Tistory</span></a></li>
+  {%- endif -%}
 </ul>
