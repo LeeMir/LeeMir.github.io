@@ -539,6 +539,7 @@
 			}
 		}
 		#btn.intro {
+			
 			animation: rainbowHover 6s linear 0s infinite;
 			padding:12px 24px;
 			&:after,&:before{
@@ -577,9 +578,9 @@
 			100% { color: #ff2a2a; }
 		}
 		@keyframes neon {
-			0% { color:rgb(0 0 0 / 0%); }
+			0% { color: rgba(0,0,0,0); }
 			50% { color:white; }
-			100% { color:rgb(0 0 0 / 0%); }
+			100% { color: rgba(0,0,0,0); }
 		}
 		  
 		
