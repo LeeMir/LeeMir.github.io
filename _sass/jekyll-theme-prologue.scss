@@ -237,8 +237,9 @@
 	$c-border: #9F2042;
 
 	.sparkle {
-		max-width: 10em;
-		margin: auto auto;
+		max-width: 30em;
+		margin-left: 337px;
+		margin-bottom: 1em !important;
 		&:hover {
 			cursor: pointer;
 		}
@@ -247,7 +248,7 @@
 	.u-hover--sparkle {
 		box-sizing: border-box;
 		position: relative;
-		padding: 0.75em;
+		padding: 0.25em;
 		&::before,
 		&::after {
 			content: '';
