@@ -538,8 +538,8 @@
 				}
 			}
 		}
-		#btn.intro {
-			animation: rainbowHover 6s linear 0s infinite;
+		#btn.initAnimation {
+			animation: neon 1s ease-in-out 0s infinite;
 			padding:12px 24px;
 			&:after,&:before{
 				width:20px;
@@ -554,7 +554,7 @@
 				border-right:2px solid #fff;
 			}
 			&:hover{
-				animation: neon 1s ease-in-out 0s infinite;
+				animation: rainbowHover 1s linear 0s infinite;
 				&:before,&:after{
 					width:120%;
 					height:120%;
@@ -566,6 +566,47 @@
 					border-color: #fff;
 				}
 			}
+		}
+		#btn.initContent {
+			text-decoration: none;
+			font-size: 2em;
+			overflow: hidden;
+		}
+		#btn.initContent span{
+			transition: 0.6s;
+			transition-delay: 0.2s;
+		}
+		#btn.initContent:before,
+		#btn.initContent:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			opacity: 0;
+			width: 100%;
+			transition: .4s,opacity .6s;
+		}
+		#btn.initContent:before {
+			content: attr(data-hover);
+			transform: translate(-150%,0);
+		}
+		#btn.initContent:after {
+			content: attr(data-active);
+			transform: translate(150%,0);
+		}
+		#btn.initContent:hover span,
+		#btn.initContent:active span {
+			opacity: 0;
+			transform: scale(0.3);
+		}
+		#btn.initContent:hover:before,
+		#btn.initContent:active:after {
+			opacity: 1;
+			transform: translate(0,0);
+			transition-delay: .4s;
+		}
+		#btn.initContent:active:before {
+				transform: translate(-150%,0);
+				transition-delay: 0s;
 		}
 		@keyframes rainbowHover {     
 			0% { color: #ff2a2a; }
