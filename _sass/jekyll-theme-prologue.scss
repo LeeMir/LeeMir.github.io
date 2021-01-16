@@ -566,7 +566,24 @@
 					border-color: #fff;
 				}
 			}
-		}/*
+		}
+		@keyframes rainbowHover {     
+			0% { color: #ff2a2a; }
+			13% { color: #ff7a2a; }
+			26% { color: #ffc52a; }
+			39% { color: #43ff2a; }
+			52% { color: #2a89ff; }
+			64% { color: #202082; }
+			78% { color: #6b2aff; } 
+			90% { color: #e82aff; }
+			100% { color: #ff2a2a; }
+		}
+		@keyframes neon {
+			0% { color: rgba(0,0,0,0); }
+			50% { color:white; }
+			100% { color: rgba(0,0,0,0); }
+		}
+		/*
 		#btn.initContent {
 			text-decoration: none;
 			font-size: 2em;
@@ -608,22 +625,7 @@
 				transform: translate(-150%,0);
 				transition-delay: 0s;
 		}*/
-		@keyframes rainbowHover {     
-			0% { color: #ff2a2a; }
-			13% { color: #ff7a2a; }
-			26% { color: #ffc52a; }
-			39% { color: #43ff2a; }
-			52% { color: #2a89ff; }
-			64% { color: #202082; }
-			78% { color: #6b2aff; } 
-			90% { color: #e82aff; }
-			100% { color: #ff2a2a; }
-		}
-		@keyframes neon {
-			0% { color: rgba(0,0,0,0); }
-			50% { color:white; }
-			100% { color: rgba(0,0,0,0); }
-		}
+		
 		  
 		
 		  
