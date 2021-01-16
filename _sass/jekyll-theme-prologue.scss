@@ -583,7 +583,7 @@
 			50% { color:white; }
 			100% { color: rgba(0,0,0,0); }
 		}
-		
+		/*
 		#btn.initContent {
 			text-decoration: none;
 			font-size: 2em;
@@ -604,7 +604,6 @@
 		}
 		#btn.initContent:before {
 			content: attr(data-hover);
-			transform: translate(-150%,0);
 		}
 		#btn.initContent:after {
 			content: attr(data-active);
@@ -625,7 +624,7 @@
 				transform: translate(-150%,0);
 				transition-delay: 0s;
 		}
-		
+		*/
 		  
 		
 		  
