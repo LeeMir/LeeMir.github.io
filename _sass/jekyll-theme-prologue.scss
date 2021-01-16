@@ -539,7 +539,6 @@
 			}
 		}
 		#btn.intro {
-			
 			animation: rainbowHover 6s linear 0s infinite;
 			padding:12px 24px;
 			&:after,&:before{
@@ -547,10 +546,12 @@
 				height:20px;
 				}
 			&:after{
-				border-color: #000;
+				border-top:2px solid #000;
+				border-left:2px solid #000;
 			}
 			&:before{
-				border-color: #fff;
+				border-bottom:2px solid #fff;
+				border-right:2px solid #fff;
 			}
 			&:hover{
 				animation: neon 1s ease-in-out 0s infinite;
