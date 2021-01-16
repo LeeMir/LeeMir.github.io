@@ -567,14 +567,21 @@
 			}
 		}
 		@keyframes rainbowHover {     
-			0% { color: #ff2a2a; }
-			15% { color: #ff7a2a; }
-			30% { color: #ffc52a; }
-			45% { color: #43ff2a; }
-			60% { color: #2a89ff; }
-			75% { color: #202082; }
-			90% { color: #6b2aff; } 
-			100% { color: #e82aff; }
+			from {
+				color: #6666ff !important;
+			  }
+			  10% {
+				color: #0099ff !important;
+			  }
+			  50% {
+				color: #00ff00 !important;
+			  }
+			  75% {
+				color: #ff3399 !important;
+			  }
+			  100% {
+				color: #6666ff !important;
+			  }
 		}
 		  
 		
