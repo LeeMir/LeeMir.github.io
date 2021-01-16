@@ -498,7 +498,7 @@
 			padding:4px 10px;
 			border-top-right-radius:10px;
 			border-bottom-left-radius:10px;
-			color:#ffb500 !important;
+			color:#ffb500;
 			transition:all 1s;
 			&:after,&:before{
 				content:" ";
@@ -523,7 +523,7 @@
 			&:hover{
 				border-top-right-radius:0px;
 				border-bottom-left-radius:0px;
-				color: #ffc400 !important;
+				color: #ffc400;
 				&:before,&:after{
 					
 					width:100%;
@@ -539,6 +539,7 @@
 			}
 		}
 		#btn.intro {
+			animation: rainbowHover 6s linear 0s infinite;
 			padding:12px 24px;
 			&:after,&:before{
 				width:20px;
@@ -553,7 +554,6 @@
 				border-right:5px solid #fff;
 			}
 			&:hover{
-				animation: rainbowHover 6s linear 0s infinite;
 				&:before,&:after{
 					width:100%;
 					height:100%;
@@ -567,21 +567,14 @@
 			}
 		}
 		@keyframes rainbowHover {     
-			from {
-				color: #6666ff !important;
-			  }
-			  10% {
-				color: #0099ff !important;
-			  }
-			  50% {
-				color: #00ff00 !important;
-			  }
-			  75% {
-				color: #ff3399 !important;
-			  }
-			  100% {
-				color: #6666ff !important;
-			  }
+			0% { color: #ff2a2a; }
+			15% { color: #ff7a2a; }
+			30% { color: #ffc52a; }
+			45% { color: #43ff2a; }
+			60% { color: #2a89ff; }
+			75% { color: #202082; }
+			90% { color: #6b2aff; } 
+			100% { color: #e82aff; }
 		}
 		  
 		
@@ -812,7 +805,7 @@
 					border-color: inherit;
 				}
 
-				a {
+				a:not(#btn) {
 					color: #fff;
 					border-color: inherit;
 
