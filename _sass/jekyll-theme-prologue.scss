@@ -553,19 +553,6 @@
 				border-right:5px solid #fff;
 			}
 			&:hover{
-				animation-duration: 3s;
-				animation-name: rainbowLink;
-				animation-iteration-count: infinite;
-				@keyframes rainbowLink {     
-					0% { color: #ff2a2a !important; }
-					15% { color: #ff7a2a !important; }
-					30% { color: #ffc52a !important; }
-					45% { color: #43ff2a !important; }
-					60% { color: #2a89ff !important; }
-					75% { color: #202082 !important; }
-					90% { color: #6b2aff !important; } 
-					100% { color: #e82aff !important; }
-				}
 				&:before,&:after{
 					width:100%;
 					height:100%;
