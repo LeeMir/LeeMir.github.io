@@ -540,7 +540,6 @@
 		}
 		#btn.intro {
 			padding:12px 24px;
-			animation: rainbowHover 6s linear 0s infinite;
 			&:after,&:before{
 				width:20px;
 				height:20px;
@@ -554,6 +553,7 @@
 				border-right:5px solid #fff;
 			}
 			&:hover{
+				animation: rainbowHover 6s linear 0s infinite;
 				&:before,&:after{
 					width:100%;
 					height:100%;
