@@ -126,7 +126,7 @@
 		font-style: italic;
 	}
 
-	a {
+	a:not(#btn) {
 		text-decoration: none;
 		color: inherit;
 		border-bottom: dotted 1px rgba(128, 128, 128, 0.5);
