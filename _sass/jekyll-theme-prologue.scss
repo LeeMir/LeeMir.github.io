@@ -494,6 +494,7 @@
 	
 	#btn{
 		cursor:pointer;
+		text-decoration: none;
 			position:relative;
 			padding:4px 10px;
 			border-top-right-radius:10px;
@@ -567,6 +568,7 @@
 			}
 		}
 		#introAnimation{
+			text-decoration: none;
 			animation: neon 1s ease-in-out 0s infinite;
 			position: relative;
 			z-index: 9999;
