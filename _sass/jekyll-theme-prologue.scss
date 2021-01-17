@@ -126,7 +126,7 @@
 		font-style: italic;
 	}
 
-	a:not(#introAnimation) {
+	a:not(#introAnimation):not(#btn) {
 		text-decoration: none;
 		color: inherit;
 		border-bottom: dotted 1px rgba(128, 128, 128, 0.5);
@@ -869,7 +869,7 @@
 					border-color: inherit;
 				}
 
-				a:not(#introAnimation) {
+				a:not(#introAnimation):not(#btn) {
 					color: #fff;
 					border-color: inherit;
 
