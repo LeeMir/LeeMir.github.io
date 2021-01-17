@@ -540,6 +540,7 @@
 		}
 		#btn.intro {
 			padding:12px 24px;
+			margin:0 12em;
 			&:after,&:before{
 				width:20px;
 				height:20px;
@@ -567,6 +568,9 @@
 		}
 		#introAnimation{
 			animation: neon 1s ease-in-out 0s infinite;
+			&:before{
+				content: "Do you wanna see my projects?";
+			}
 			&:hover{
 				animation: rainbowHover 1s linear 0s infinite;
 				&:before{
