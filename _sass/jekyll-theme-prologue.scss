@@ -538,8 +538,7 @@
 				}
 			}
 		}
-		#btn.initAnimation {
-			animation: neon 1s ease-in-out 0s infinite;
+		#btn.intro {
 			padding:12px 24px;
 			&:after,&:before{
 				width:20px;
@@ -554,7 +553,6 @@
 				border-right:2px solid #fff;
 			}
 			&:hover{
-				animation: rainbowHover 1s linear 0s infinite;
 				&:before,&:after{
 					width:120%;
 					height:120%;
@@ -564,6 +562,15 @@
 				}
 				&:after{
 					border-color: #fff;
+				}
+			}
+		}
+		#introAnimation{
+			animation: neon 1s ease-in-out 0s infinite;
+			&:hover{
+				animation: rainbowHover 1s linear 0s infinite;
+				&:before{
+					content: "Let's Go My Projects!";
 				}
 			}
 		}
