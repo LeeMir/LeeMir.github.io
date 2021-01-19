@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>title name</title>
+    <style>
+        input[type="text"], input[type="password"]
+        {
+            width: 70%; /* 원하는 너비 설정 */
+            height: auto; /* 높이값 초기화 */
+            line-height : normal; /* line-height 초기화 */
+            padding: .8em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+            font-family: inherit; /* 폰트 상속 */
+            border: 1px solid #999;
+            border-radius: 0; /* iSO 둥근모서리 제거 */
+            outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
+            -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */
+            -moz-appearance: none;
+            appearance: none;
+        }
+        .lab
+        {
+            width: 30%;
+        }
+        .textbox
+        {
+            width:30vw;
+            height: auto;
+            padding: .8em .5em;
+            margin: .5em;
+            border: 1px solid #999;
+        }
+    </style>
+    </head>
+
+    <body>
+    <h1>Total Cell Calculator</h1>
+    <button onclick="init();">
+        Reset
+    </button>
+    <div>
+        <label class="lab" for="sectionNumber">Section Number</label>
+        <select id="sectionNumber" name="job" onchange="textboxVisible(this);">
+            <option value="">Number</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <br>
+    <div id="tb1" style="visibility:hidden">
+        <label for="section1">section 1</label>
+        <input type="text" id="section1">
+    </div>
+    <div id="tb2" style="visibility:hidden">
+        <label for="section2">section 2</label>
+        <input type="text" id="section2">
+    </div>
+    <div id="tb3" style="visibility:hidden">
+        <label for="section3">section 3</label>
+        <input type="text" id="section3">
+    </div>
+    <div id="tb4" style="visibility:hidden">
+        <label for="section4">section 4</label>
+        <input type="text" id="section4">
+    </div>
+    <div id="tb5" style="visibility:hidden">
+        <label for="section5">section 5</label>
+        <input type="text" id="section5">
+    </div>
+    
+    <div id="tb6" style="visibility:hidden">
+        <label for="cellSolutionVolume">cell solution volume</label>
+        <input type="text" id="cellSolutionVolume">
+    </div>
+   
+    <div id="tb7" style="visibility:hidden" class="textbox"> 
+        <p>total number: <var id="totalnum"></var></p>
+        <p>total cell: <var id="totalcell"></var></p>
+    </div>
+
+    <button id="btn1" onclick="totalCalculate(); textboxVisible2();" style="visibility:hidden">
+        Calculate!
+    </button>
+
+    <h1 id="hh" style="visibility:hidden">Seed Volume Calculator</h1>
+    <div id="tb8" style="visibility:hidden">
+        <label for="totalVolum">total volum</label>
+        <input type="text" id="totalVolum">
+    </div>
+    <div id="tb9" style="visibility:hidden">
+        <label for="seeding">seeding</label>
+        <input type="text" id="seeding">
+    </div>
+    <div id="tb10" style="visibility:hidden">
+        <label for="well">well</label>
+        <input type="text" id="well">
+    </div>
+    <div id="tb11" style="visibility:hidden">
+        <label for="plate">plate</label>
+        <input type="text" id="plate">
+    </div>
+
+    <div id="tb12" style="visibility:hidden" class="textbox"> 
+        <p>total well: <var id="totalWell"></var></p>
+        <p>total seeding cell: <var id="totalSeedingCell"></var></p>
+        <p>seeding volum: <var id="seedingVolum"></var></p>
+        <p>1 well seeding: <var id="lwellSeeding"></var></p>
+    </div>
+    <button id="btn2" onclick="seedCalculate();" style="visibility:hidden">
+        Calculate!
+    </button>
+
+    </body>
+
+    <script>
+
+    function init()
+    {
+        document.getElementById('tb1').style.visibility = 'hidden';
+        document.getElementById('tb2').style.visibility = 'hidden';
+        document.getElementById('tb3').style.visibility = 'hidden';
+        document.getElementById('tb4').style.visibility = 'hidden';
+        document.getElementById('tb5').style.visibility = 'hidden';
+        document.getElementById('tb5').style.visibility = 'hidden';
+        document.getElementById('tb6').style.visibility = 'hidden';
+        document.getElementById('tb7').style.visibility = 'hidden';
+        document.getElementById('tb8').style.visibility = 'hidden';
+        document.getElementById('tb9').style.visibility = 'hidden';
+        document.getElementById('tb10').style.visibility = 'hidden';
+        document.getElementById('tb11').style.visibility = 'hidden';
+        document.getElementById('tb12').style.visibility = 'hidden';
+        document.getElementById('btn1').style.visibility = 'hidden';
+        document.getElementById('btn2').style.visibility = 'hidden';
+        document.getElementById('hh').style.visibility = 'hidden';
+        document.getElementById('sectionNumber').value = '';
+        document.getElementById('section1').value = '';
+        document.getElementById('section2').value = '';
+        document.getElementById('section3').value = '';
+        document.getElementById('section4').value = '';
+        document.getElementById('section5').value = '';
+        document.getElementById('section5').value = '';
+        document.getElementById('cellSolutionVolume').value = '';
+        document.getElementById('totalVolum').value = '';
+        document.getElementById('seeding').value = '';
+        document.getElementById('well').value = '';
+        document.getElementById('plate').value = '';
+    }
+    function textboxVisible(self)
+    {
+        var temp = document.getElementById('sectionNumber').value;
+        init();
+        document.getElementById('sectionNumber').value = temp;
+        if(self.value>0){
+            document.getElementById('tb1').style.visibility = 'visible';
+        }
+        if(self.value>1){
+            document.getElementById('tb2').style.visibility = 'visible';
+        }
+        if(self.value>2){
+            document.getElementById('tb3').style.visibility = 'visible';
+        }
+        if(self.value>3){
+            document.getElementById('tb4').style.visibility = 'visible';
+        }
+        if(self.value>4){
+            document.getElementById('tb5').style.visibility = 'visible';
+        }
+        document.getElementById('tb6').style.visibility = 'visible';
+        document.getElementById('tb7').style.visibility = 'visible';
+        document.getElementById('btn1').style.visibility = 'visible';
+        if(self.value==''){
+            init();
+        }
+    }
+    function totalCalculate() 
+    {
+
+        var sectionNumber = Number(document.getElementById('sectionNumber').value);
+        var section1 = Number(document.getElementById('section1').value);
+        var section2 = Number(document.getElementById('section2').value);
+        var section3 = Number(document.getElementById('section3').value);
+        var section4 = Number(document.getElementById('section4').value);
+        var section5 = Number(document.getElementById('section5').value);
+        var csv = Number(document.getElementById('cellSolutionVolume').value);
+        var totalNumber = section1+section2+section3+section4+section5;
+        var totalCell = totalNumber/sectionNumber*2*csv;
+
+        var i=0;
+        for(i=0;i<sectionNumber;i++)
+            totalCell*=10;
+        document.getElementById('totalnum').innerHTML = totalNumber;
+        document.getElementById('totalcell').innerHTML = totalCell;
+        return totalCell;
+    }
+
+    function textboxVisible2()
+    {
+        document.getElementById('hh').style.visibility = 'visible';
+        document.getElementById('tb6').style.visibility = 'visible';
+        document.getElementById('tb7').style.visibility = 'visible';
+        document.getElementById('tb8').style.visibility = 'visible';
+        document.getElementById('tb9').style.visibility = 'visible';
+        document.getElementById('tb10').style.visibility = 'visible';
+        document.getElementById('tb11').style.visibility = 'visible';
+        document.getElementById('tb12').style.visibility = 'visible';
+        document.getElementById('btn2').style.visibility = 'visible';
+    }
+
+    function seedCalculate() 
+    {
+        var totalCell = totalCalculate();
+        var totalVolum = Number(document.getElementById('totalVolum').value);
+        var seeding = Number(document.getElementById('seeding').value);
+        var well = Number(document.getElementById('well').value);
+        var plate = Number(document.getElementById('plate').value);
+
+        var totalWell = well*plate + 1;
+        var totalSeedingCell = totalWell * seeding;
+        var seedingVolum = totalVolum*(seeding*((well*plate)+1))/totalCell;
+        var lwellSeeding = seedingVolum/totalWell;
+
+        document.getElementById('totalWell').innerHTML = totalWell;
+        document.getElementById('totalSeedingCell').innerHTML = totalSeedingCell;
+        document.getElementById('seedingVolum').innerHTML = seedingVolum;
+        document.getElementById('lwellSeeding').innerHTML = lwellSeeding;
+
+    }
+    </script>
+</html>
