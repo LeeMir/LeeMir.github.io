@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="number"], input[type="password"]
+        {
+            width: 20vw; /* 원하는 너비 설정 */
+            height: auto; /* 높이값 초기화 */
+            line-height : normal; /* line-height 초기화 */
+            padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+            font-family: inherit; /* 폰트 상속 */
+            border: 1px solid #999;
+            border-radius: 2px; /* iSO 둥근모서리 제거 */
+            outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
+            -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */
+            -moz-appearance: none;
+            appearance: none;
+
+        }
+    </style>
+
+</head>
+<script>
+    var section_num = 4;
+    function visiable_sec(){
+        var section_num =  Number(document.getElementById("section_num").value);
+        if (section_num > 5){
+            alert("section_num <= 5");
+            return;
+        }
+            
+        var s1 = document.getElementById("S1");
+        var s2 = document.getElementById("S2");
+        var s3 = document.getElementById("S3");
+        var s4 = document.getElementById("S4");
+        var s5 = document.getElementById("S5");
+        
+        
+        var ss = [s1,s2,s3,s4,s5];
+        for (var i=0;i<5;i++){
+            ss[i].style.visibility = "hidden";
+        }
+        for (var i=0;i<section_num;i++){
+            ss[i].style.visibility = "visible";
+        }
+    
+    }
+    function total_num_cal(){
+        var total_num = document.getElementById("total_num");
+        var s1 = Number(document.getElementById("s1").value);
+        var s2 = Number(document.getElementById("s2").value);
+        var s3 = Number(document.getElementById("s3").value);
+        var s4 = Number(document.getElementById("s4").value);
+        var s5 = Number(document.getElementById("s5").value);
+        total_num.value = s1 + s2 + s3 + s4 + s5;
+    }
+    function total_cell_cal(){
+        var total_cell = document.getElementById("total_cell");
+        var total_cell2 = document.getElementById("total_cell2");
+        var total_num = Number(document.getElementById("total_num").value);
+        
+        var cell_sol_vol = Number(document.getElementById("cell_sol_vol").value);
+        
+        total_cell.value = total_num/section_num*2*cell_sol_vol*Math.pow(10,section_num);
+        total_cell2.value = total_cell.value;
+    }
+    function total_well_cal(){
+        var well = Number(document.getElementById("well").value);
+        var plate = Number(document.getElementById("plate").value);
+        
+        var total_well = document.getElementById("total_well");
+        total_well.value = (well*plate)+1;
+    }
+    function total_seeding_cell_cal(){
+        var total_well = Number(document.getElementById("total_well").value);
+        var seeding = Number(document.getElementById("seeding").value);
+
+        var total_seeding_cell = document.getElementById("total_seeding_cell");
+        total_seeding_cell.value = total_well * seeding;
+    }
+    function seeding_vol_cal(){
+        var total_vol = Number(document.getElementById("total_vol").value);
+        var total_seeding_cell = Number(document.getElementById("total_seeding_cell").value);
+        var total_cell = Number(document.getElementById("total_cell").value);
+
+        var seeding_vol = document.getElementById("seeding_vol");
+        seeding_vol.value = total_vol*total_seeding_cell/total_cell;
+    }
+    function one_well_seeding_cal(){
+        var seeding_vol = Number(document.getElementById("seeding_vol").value);
+        var total_well = Number(document.getElementById("total_well").value);
+        var one_well_seeding = document.getElementById("one_well_seeding");
+        one_well_seeding.value = seeding_vol/total_well;
+
+    }
+    function init(){
+        document.getElementById("section_num").value = '';
+        var s1 = document.getElementById("S1");
+        var s2 = document.getElementById("S2");
+        var s3 = document.getElementById("S3");
+        var s4 = document.getElementById("S4");
+        var s5 = document.getElementById("S5");
+        
+        var ss = [s1,s2,s3,s4,s5];
+        for (var i=0;i<5;i++){
+            ss[i].style.visibility = "hidden";
+        }
+
+        document.getElementById("total_num").value = '';
+        document.getElementById("cell_sol_vol").value = '';
+        document.getElementById("total_cell").value = '';
+        document.getElementById("total_cell2").value = '';
+        document.getElementById("total_vol").value = '';
+        document.getElementById("seeding").value = '';
+        document.getElementById("well").value = '';
+        document.getElementById("plate").value = '';
+        document.getElementById("total_well").value = '';
+        document.getElementById("total_seeding_cell").value = '';
+        document.getElementById("seeding_vol").value = '';
+        document.getElementById("one_well_seeding").value = '';
+
+    }
+</script>
+<body>
+    <button class="button" onclick="init()">Reset</button>
+    <h2>total cell 계산기 </h2>
+    <div class="textbox">
+        <label for="section_num">section num :</label>
+        <input type="number" id="section_num">
+        <button class="button" onclick="visiable_sec()">submit</button>
+    </div>
+    <div class="textbox" id="S1" style="visibility:hidden;">
+        <label for="s1" >section 1 :</label>
+        <input type="number" id="s1">
+    </div>
+    <div class="textbox" id="S2" style="visibility: hidden;">
+        <label for="s2">section 2 :</label>
+        <input type="number" id="s2">
+    </div>
+    <div class="textbox" id="S3" style="visibility: hidden;">
+        <label for="s3">section 3 :</label>
+        <input type="number" id="s3">
+    </div>
+    <div class="textbox" id="S4" style="visibility: hidden;">
+        <label for="s4">section 4 :</label>
+        <input type="number" id="s4">
+    </div>
+    <div class="textbox" id="S5" style="visibility: hidden;">
+        <label for="s5">section 5 :</label>
+        <input type="number" id="s5">
+    </div>
+    
+    <div class="textbox">
+        <button class="button" onclick="total_num_cal()">Cal</button>
+        <label for="total_num">total number : </label>
+        <input type="number" id="total_num">
+    </div>
+  
+    <div class="textbox">
+        <label for="cell_sol_vol">cell solution volume(ml) :</label>
+        <input type="number" id="cell_sol_vol">
+    </div>
+    <div class="textbox">
+        <button class="button" onclick="total_cell_cal()">Cal</button>
+        <label for="total_cell">total cell :</label>
+        <input type="number" id="total_cell">
+    </div>
+
+    <h2>sedding 양 계산기 </h2>
+    <div class="textbox">
+        <label for="total_cell2">total cell :</label>
+        <input type="number" id="total_cell2">
+    </div>
+    <div class="textbox">
+        <label for="total_vol">total volum(㎕) :</label>
+        <input type="number" id="total_vol">
+    </div>
+    <div class="textbox">
+        <label for="seeding">seeding :</label>
+        <input type="number" id="seeding">
+    </div>
+    <div class="textbox">
+        <label for="well">well :</label>
+        <input type="number" id="well">
+    </div>
+    <div class="textbox">
+        <label for="plate">plate :</label>
+        <input type="number" id="plate">
+    </div>
+    <div class="textbox">
+        <button class="button" onclick="total_well_cal()">Cal</button>
+        <label for="total_well">total well :</label>
+        <input type="number" id="total_well">
+    </div>
+    <div class="textbox">
+        <button class="button" onclick="total_seeding_cell_cal()">Cal</button>
+        <label for="total_seeding_cell">total seeding cell :</label>
+        <input type="number" id="total_seeding_cell">
+    </div>
+    <div class="textbox">
+        <button class="button" onclick="seeding_vol_cal()">Cal</button>
+        <label for="seeding_vol">seeding volum(㎕) :</label>
+        <input type="number" id="seeding_vol">
+    </div>
+    <div class="textbox">
+        <button class="button" onclick="one_well_seeding_cal()">Cal</button>
+        <label for="one_well_seeding">1 well seeding(㎕) :</label>
+        <input type="number" id="one_well_seeding">
+    </div>
+
+     
+</body>
+</html>
