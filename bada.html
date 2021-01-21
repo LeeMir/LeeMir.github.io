@@ -49,6 +49,14 @@
             column-gap: 20px;
             margin-bottom: 5px;
         }
+        .btn_container
+        {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            margin: 0;
+        }
 
         label
         {
@@ -137,9 +145,9 @@
     <div class="container">
         <label>section num : </label>
         <div class="text_box" id="section_num_box">0</div>
-        <div style="width:100%;">
-            <button class="button btn" style="width:48%; height: 100%;" id="section_num" onclick="section_plus(); section_text(); ">+</button>
-            <button class="button btn" style="width:48%; height: 100%;" id="section_num" onclick="section_minus(); section_text(); ">-</button>
+        <div class="btn_container">
+            <button class="button btn" style="height: 100%;" id="section_num" onclick="section_plus(); section_text(); ">+</button>
+            <button class="button btn" style="height: 100%;" id="section_num" onclick="section_minus(); section_text(); ">-</button>
         </div>
     </div>
     <div class="container" id="cell_container">
