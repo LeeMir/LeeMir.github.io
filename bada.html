@@ -87,20 +87,59 @@
             -moz-appearance: none;
             appearance: none;
         }
-        
+        #header {
+            width:100%;
+            position:fixed;
+            z-index: 1000;
+            text-align: left;
+            background-color: #67BFAD;
+            margin: 0;
+            padding: 0.5em;
+            color: #FFF;
+        }
+        #header2 {
+            width:100%;
+            text-align: left;
+            background-color: #67BFAD;
+            margin: 0;
+            padding: 0.5em;
+            color: #FFF;
+        }
+        #footer {
+		    text-align: center;
+            background-color: #dce3e2;
+            margin-top:1em;
+		    padding: 0.5em;
+            box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
+            color: #555;
+        }
+
+        body {
+            margin: 0;
+            padding:0;
+            background-color: #fefff5;
+            box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
+        }
+	
     </style>
 
 </head>
 
 <body>
-    <button class="button btn" style="font-size: 2.5vh;" onclick="init()">Reset</button>
+    <div id="header">
+        <h2>Cell Calculator <button class="button btn" style="font-size: 2.5vh;" onclick="init()">Reset</button></h2>
+    </div>
+    <div id="header2">
+        <h2>Cell Calculator <button class="button btn" style="font-size: 2.5vh;" onclick="init()">Reset</button></h2>
+    </div>
+    <div id="main">
     <h2>Total Cell Calculator</h2>
     <div class="container">
         <label>section num : </label>
         <div class="text_box" id="section_num_box">0</div>
-        <div>
-            <button class="button btn" style="width:46%; height: 100%;" id="section_num" onclick="section_plus(); section_text(); ">+</button>
-            <button class="button btn" style="width:46%; height: 100%;" id="section_num" onclick="section_minus(); section_text(); ">-</button>
+        <div style="width:100%;">
+            <button class="button btn" style="width:48%; height: 100%;" id="section_num" onclick="section_plus(); section_text(); ">+</button>
+            <button class="button btn" style="width:48%; height: 100%;" id="section_num" onclick="section_minus(); section_text(); ">-</button>
         </div>
     </div>
     <div class="container" id="cell_container">
@@ -153,7 +192,10 @@
         <button class="button btn" onclick="one_well_seeding_cal()">Cal</button>
 
     </div>
-     
+    </div>
+    <div id="footer">
+        @Bada. All rights reserved.
+    </div>
 </body>
 <script>
     var section_num = 0;
