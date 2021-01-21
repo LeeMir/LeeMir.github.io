@@ -5,26 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .container
+        {
+            width: 60%;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 0.25fr;
+            row-gap: 5px;
+            column-gap: 20px;
+            margin-bottom: 5px;
+        }
+        label
+        {
+            text-align: right;
+        }
         input[type="number"], input[type="password"]
         {
-            width: 20vw; /* 원하는 너비 설정 */
             height: auto; /* 높이값 초기화 */
             line-height : normal; /* line-height 초기화 */
             padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
-            font-family: inherit; /* 폰트 상속 */
+            font-family: Malgun Gothic, serif; /* 폰트 상속 */
             border: 1px solid #999;
             border-radius: 2px; /* iSO 둥근모서리 제거 */
             outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
             -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */
             -moz-appearance: none;
             appearance: none;
-
+        }
+        #text_box{
+            height: auto; /* 높이값 초기화 */
+            line-height : normal; /* line-height 초기화 */
+            padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+            font-family: Malgun Gothic, serif; /* 폰트 상속 */
+            border: 1px solid #999;
+            border-radius: 2px; /* iSO 둥근모서리 제거 */
+            outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
+            -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */
+            -moz-appearance: none;
+            appearance: none;
         }
     </style>
 
 </head>
+
+<body>
+    <button class="button" onclick="init()">Reset</button>
+    <h2>total cell 계산기 </h2>
+    <div class="container">
+        <label for="section_num">section num : </label>
+        <div id="text_box">0</div>
+        <div>
+            <button class="button" id="section_num" onclick="section_plus(); section_text(); ">+</button>
+            <button class="button" id="section_num" onclick="section_minus(); section_text(); ">-</button>
+        </div>
+    </div>
+    <div class="container" id="cell_container">
+
+        <label id="section_after" for="total_num">total number : </label>
+        <input type="number" id="total_num">
+        <button class="button" onclick="total_num_cal()">Cal</button>
+
+        <label for="cell_sol_vol">cell solution volume(ml) :</label>
+        <input type="number" id="cell_sol_vol">
+        <div></div>
+        <label for="total_cell">total cell :</label>
+        <input type="number" id="total_cell">
+        <button class="button" onclick="total_cell_cal()">Cal</button>
+    </div>
+    <h2>sedding 양 계산기 </h2>
+    <div class="container">
+        
+        <label for="total_cell2">total cell :</label>
+        <input type="number" id="total_cell2">
+        <div></div>
+        <label for="total_vol">total volum(㎕) :</label>
+        <input type="number" id="total_vol">
+        <div></div>
+        <label for="seeding">seeding :</label>
+        <input type="number" id="seeding">
+        <div></div>
+        <label for="well">well :</label>
+        <input type="number" id="well">
+        <div></div>
+        <label for="plate">plate :</label>
+        <input type="number" id="plate">
+        <div></div>
+        
+        <label for="total_well">total well :</label>
+        <input type="number" id="total_well">
+        <button class="button" onclick="total_well_cal()">Cal</button>
+        
+        <label for="total_seeding_cell">total seeding cell :</label>
+        <input type="number" id="total_seeding_cell">
+        <button class="button" onclick="total_seeding_cell_cal()">Cal</button>
+        
+        <label for="seeding_vol">seeding volum(㎕) :</label>
+        <input type="number" id="seeding_vol">
+        <button class="button" onclick="seeding_vol_cal()">Cal</button>
+
+        <label for="one_well_seeding">1 well seeding(㎕) :</label>
+        <input type="number" id="one_well_seeding">
+        <button class="button" onclick="one_well_seeding_cal()">Cal</button>
+
+    </div>
+     
+</body>
 <script>
-    var section_num = 4;
+
+    var section_num = 0;
+    function section_text(){
+        var section_textbox = document.getElementById('text_box');
+        section_textbox.innerHTML = section_num;
+    }
+    function section_plus(){
+        if(section_num<5)
+        {
+            var section_create = document.getElementById('section_after');
+            section_num += 1;
+            section_create.insertAdjacentHTML('beforebegin','<label id="se'+section_num+'" for="s'+section_num+'" >section '+section_num+' :</label><input type="number" id="s'+section_num+'"><div id="sec'+section_num+'"></div>');
+        }
+        else
+        {
+            alert("더이상 section을 추가할 수 없습니다!");
+        }
+    }
+    function section_minus(){
+        if(section_num>0)
+        {
+            var section_delete = document.getElementById("s"+section_num);	//제거하고자 하는 엘리먼트
+            var parentNode = document.getElementById("cell_container");
+            parentNode.removeChild(section_delete);
+            section_delete = document.getElementById("se"+section_num);
+            parentNode.removeChild(section_delete);
+            section_delete = document.getElementById("sec"+section_num);
+            parentNode.removeChild(section_delete);
+            section_num-=1;
+        }
+        else
+        {
+            alert("더 제거할 section이 존재하지 않습니다!");
+        }
+    }
+    /*
     function visiable_sec(){
         var section_num =  Number(document.getElementById("section_num").value);
         if (section_num > 5){
@@ -48,6 +169,7 @@
         }
     
     }
+    */
     function total_num_cal(){
         var total_num = document.getElementById("total_num");
         var s1 = Number(document.getElementById("s1").value);
@@ -124,93 +246,4 @@
 
     }
 </script>
-<body>
-    <button class="button" onclick="init()">Reset</button>
-    <h2>total cell 계산기 </h2>
-    <div class="textbox">
-        <label for="section_num">section num :</label>
-        <input type="number" id="section_num">
-        <button class="button" onclick="visiable_sec()">submit</button>
-    </div>
-    <div class="textbox" id="S1" style="visibility:hidden;">
-        <label for="s1" >section 1 :</label>
-        <input type="number" id="s1">
-    </div>
-    <div class="textbox" id="S2" style="visibility: hidden;">
-        <label for="s2">section 2 :</label>
-        <input type="number" id="s2">
-    </div>
-    <div class="textbox" id="S3" style="visibility: hidden;">
-        <label for="s3">section 3 :</label>
-        <input type="number" id="s3">
-    </div>
-    <div class="textbox" id="S4" style="visibility: hidden;">
-        <label for="s4">section 4 :</label>
-        <input type="number" id="s4">
-    </div>
-    <div class="textbox" id="S5" style="visibility: hidden;">
-        <label for="s5">section 5 :</label>
-        <input type="number" id="s5">
-    </div>
-    
-    <div class="textbox">
-        <button class="button" onclick="total_num_cal()">Cal</button>
-        <label for="total_num">total number : </label>
-        <input type="number" id="total_num">
-    </div>
-  
-    <div class="textbox">
-        <label for="cell_sol_vol">cell solution volume(ml) :</label>
-        <input type="number" id="cell_sol_vol">
-    </div>
-    <div class="textbox">
-        <button class="button" onclick="total_cell_cal()">Cal</button>
-        <label for="total_cell">total cell :</label>
-        <input type="number" id="total_cell">
-    </div>
-
-    <h2>sedding 양 계산기 </h2>
-    <div class="textbox">
-        <label for="total_cell2">total cell :</label>
-        <input type="number" id="total_cell2">
-    </div>
-    <div class="textbox">
-        <label for="total_vol">total volum(㎕) :</label>
-        <input type="number" id="total_vol">
-    </div>
-    <div class="textbox">
-        <label for="seeding">seeding :</label>
-        <input type="number" id="seeding">
-    </div>
-    <div class="textbox">
-        <label for="well">well :</label>
-        <input type="number" id="well">
-    </div>
-    <div class="textbox">
-        <label for="plate">plate :</label>
-        <input type="number" id="plate">
-    </div>
-    <div class="textbox">
-        <button class="button" onclick="total_well_cal()">Cal</button>
-        <label for="total_well">total well :</label>
-        <input type="number" id="total_well">
-    </div>
-    <div class="textbox">
-        <button class="button" onclick="total_seeding_cell_cal()">Cal</button>
-        <label for="total_seeding_cell">total seeding cell :</label>
-        <input type="number" id="total_seeding_cell">
-    </div>
-    <div class="textbox">
-        <button class="button" onclick="seeding_vol_cal()">Cal</button>
-        <label for="seeding_vol">seeding volum(㎕) :</label>
-        <input type="number" id="seeding_vol">
-    </div>
-    <div class="textbox">
-        <button class="button" onclick="one_well_seeding_cal()">Cal</button>
-        <label for="one_well_seeding">1 well seeding(㎕) :</label>
-        <input type="number" id="one_well_seeding">
-    </div>
-
-     
-</body>
 </html>
