@@ -24,8 +24,8 @@
 
         .btn, .btnReset
         {
-            border: 2px solid #01261C;
-            color:  #36593E;
+            border: 2px solid #00467F;
+            color:  #00467F;
             outline: none;
             cursor: pointer;
             background: none;
@@ -36,17 +36,22 @@
         }
         .btnReset
         {
-            border: 2px solid  #FE86A4;
-            color:  #FE86A4;
+            border: 2px solid #ffc660;
+            color:  #ffc660;
+            font-size: 1.1rem;
+            margin-left:1rem;
+            height: auto;
+            align-self: center;
         }
         .btn:hover, .btnReset:hover{
             color: white;
             font-size: 1.1em;
-            background-color:#36593E;
+            background-color:#00467F;
             transition: all 0.3s ease-in-out;
         }
         .btnReset:hover{
-            background-color:#F28599;
+            font-size: 1.2rem;
+            background-color:#ffc660;
         }
         .container
         {
@@ -81,7 +86,7 @@
             padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
             font-family: "Malgun Gothic", serif; /* 폰트 상속 */
             font-size:2vh;
-            border: 2px solid rgb(105, 0, 0);
+            border: 2px solid #D95204;
             
             border-radius: 2px; /* iSO 둥근모서리 제거 */
             outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
@@ -147,9 +152,9 @@
             position:fixed;
             z-index: 1000;
             text-align: left;
-            background: #5A3F37;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #2C7744, #5A3F37);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #2C7744, #5A3F37); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #00467F;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
             margin: 0;
             padding: 0.5em;
@@ -188,10 +193,10 @@
 
 <body>
     <div id="header">
-        <h2>Cell Calculator</h2> <button class="button btnReset" style="font-size: 2.5vh; margin-left:2rem; height: auto; align-self: center;" onclick="init()">Reset</button><div style="flex-grow: 1;"></div><img style="width:30px; height:auto; margin-right:2rem; align-self: center;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"/>
+        <h2>Cell Calculator</h2> <button class="button btnReset" onclick="init()">Reset</button><div style="flex-grow: 1;"></div><img style="width:30px; height:auto; margin-right:2rem; align-self: center;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"/>
     </div>
     <div id="header2">
-        <h2>Cell Calculator</h2> <button class="button btn" style="font-size: 2.5vh;" onclick="init()">Reset</button>
+        <h2>Cell Calculator</h2> <button class="button btnReset" onclick="init()">Reset</button>
     </div>
     <div id="main">
     <h2>Total Cell Calculator</h2>
