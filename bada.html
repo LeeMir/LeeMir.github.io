@@ -95,7 +95,46 @@
             -moz-appearance: none;
             appearance: none;
         }
+        .modal_wrap{
+            display: none;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin: -250px 0 0 -250px;
+            background:#eee;
+            z-index: 2;
+        }
+        .black_bg{
+            display: none;
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color:rgba(0, 0,0, 0.5);
+            top:0;
+            left: 0;
+            z-index: 1;
+        }
+        .modal_close{
+            width: 26px;
+            height: 26px;
+            position: absolute;
+            top: -30px;
+            right: 0;
+        }
+        .modal_close> a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            background:url(https://img.icons8.com/metro/26/000000/close-window.png);
+            text-indent: -9999px;
+        }
+
         #header {
+            display: flex;
+            flex-direction: row;
             width:100%;
             position:fixed;
             z-index: 1000;
@@ -106,6 +145,8 @@
             color: #FFF;
         }
         #header2 {
+            display: flex;
+            flex-direction: row;
             width:100%;
             text-align: left;
             background-color: #67BFAD;
@@ -123,6 +164,7 @@
         }
 
         body {
+            z-index: 0;
             margin: 0;
             padding:0;
             background-color: #fefff5;
@@ -135,10 +177,10 @@
 
 <body>
     <div id="header">
-        <h2>Cell Calculator <button class="button btn" style="font-size: 2.5vh;" onclick="init()">Reset</button></h2>
+        <h2>Cell Calculator</h2> <button class="button btn" style="font-size: 2.5vh; margin-left:2rem;" onclick="init()">Reset</button><div style="flex-grow: 1;"></div><img style="margin-right:2rem;" onclick="onHelp();" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIgMmM1LjUxNCAwIDEwIDQuNDg2IDEwIDEwcy00LjQ4NiAxMC0xMCAxMC0xMC00LjQ4Ni0xMC0xMCA0LjQ4Ni0xMCAxMC0xMHptMC0yYy02LjYyNyAwLTEyIDUuMzczLTEyIDEyczUuMzczIDEyIDEyIDEyIDEyLTUuMzczIDEyLTEyLTUuMzczLTEyLTEyLTEyem0xLjI1IDE3YzAgLjY5LS41NTkgMS4yNS0xLjI1IDEuMjUtLjY4OSAwLTEuMjUtLjU2LTEuMjUtMS4yNXMuNTYxLTEuMjUgMS4yNS0xLjI1Yy42OTEgMCAxLjI1LjU2IDEuMjUgMS4yNXptMS4zOTMtOS45OThjLS42MDgtLjYxNi0xLjUxNS0uOTU1LTIuNTUxLS45NTUtMi4xOCAwLTMuNTkgMS41NS0zLjU5IDMuOTVoMi4wMTFjMC0xLjQ4Ni44MjktMi4wMTMgMS41MzgtMi4wMTMuNjM0IDAgMS4zMDcuNDIxIDEuMzY0IDEuMjI2LjA2Mi44NDctLjM5IDEuMjc3LS45NjIgMS44MjEtMS40MTIgMS4zNDMtMS40MzggMS45OTMtMS40MzIgMy40NjhoMi4wMDVjLS4wMTMtLjY2NC4wMy0xLjIwMy45MzUtMi4xNzguNjc3LS43MyAxLjUxOS0xLjYzOCAxLjUzNi0zLjAyMi4wMTEtLjkyNC0uMjg0LTEuNzE5LS44NTQtMi4yOTd6Ii8+PC9zdmc+">
     </div>
     <div id="header2">
-        <h2>Cell Calculator <button class="button btn" style="font-size: 2.5vh;" onclick="init()">Reset</button></h2>
+        <h2>Cell Calculator</h2> <button class="button btn" style="font-size: 2.5vh;" onclick="init()">Reset</button>
     </div>
     <div id="main">
     <h2>Total Cell Calculator</h2>
@@ -204,8 +246,26 @@
     <div id="footer">
         @Bada. All rights reserved.
     </div>
+    <div class="black_bg"></div>
+    <div class="modal_wrap">
+        <div class="modal_close" onclick="offHelp();"><a href="#">close</a></div>
+        <div>
+            도움말(업데이트 예정)
+        </div>
+    <div>
 </body>
 <script>
+
+    function onHelp() {
+        document.querySelector('.modal_wrap').style.display ='block';
+        document.querySelector('.black_bg').style.display ='block';
+    }   
+    function offHelp() {
+        document.querySelector('.modal_wrap').style.display ='none';
+        document.querySelector('.black_bg').style.display ='none';
+    }
+
+
     var section_num = 0;
     var total_sum = 0;
     function section_text(){
