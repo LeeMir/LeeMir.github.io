@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cell Calculator</title>
     <style>
-        @media (max-width:360px){html{font-size:9px;}}
-        @media (min-width:361px){html{font-size:8px;}}
-        @media (min-width:400px){html{font-size:8px;}}
-        @media (min-width:440px){html{font-size:8px;}}
-        @media (min-width:480px){html{font-size:8px;}}
-        @media (min-width:520px){html{font-size:8px;}}
-        @media (min-width:560px){html{font-size:8px;}}
-        @media (min-width:600px){html{font-size:9px;}}
-        @media (min-width:640px){html{font-size:10px;}}
-        @media (min-width:680px){html{font-size:11px;}}
-        @media (min-width:720px){html{font-size:12px;}}
-        @media (min-width:760px){html{font-size:13px;}}
-        @media (min-width:800px){html{font-size:14px;}}
-        @media (min-width:840px){html{font-size:15px;}}
-        @media (min-width:880px){html{font-size:16px;}}
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Patrick+Hand&family=Satisfy&family=Piazzolla:wght@500&display=swap');  /* 구글 웹 폰트 */
+        @media (max-width:360px){html{font-size:10px;}}
+        @media (min-width:361px){html{font-size:10px;}}
+        @media (min-width:400px){html{font-size:10px;}}
+        @media (min-width:440px){html{font-size:10px;}}
+        @media (min-width:480px){html{font-size:10px;}}
+        @media (min-width:520px){html{font-size:11px;}}
+        @media (min-width:560px){html{font-size:11px;}}
+        @media (min-width:600px){html{font-size:11px;}}
+        @media (min-width:640px){html{font-size:12px;}}
+        @media (min-width:680px){html{font-size:13px;}}
+        @media (min-width:720px){html{font-size:14px;}}
+        @media (min-width:760px){html{font-size:15px;}}
+        @media (min-width:800px){html{font-size:16px;}}
+        @media (min-width:840px){html{font-size:17px;}}
+        @media (min-width:880px){html{font-size:18px;}}
 
 
         .btn, .btnReset
@@ -30,7 +31,7 @@
             cursor: pointer;
             background: none;
             border-radius: 5px;
-            font-family: "Lato",sans-serif;
+            font-family: 'Patrick Hand', cursive;
             transition: .5s;
             font-size: 1em;
         }
@@ -75,7 +76,7 @@
         {
             width: 100%;
             text-align: right;
-            font-family: Malgun Gothic, serif;
+            font-family: 'Patrick Hand', cursive;
             font-size:1.5rem;
         }
         input[type="number"], input[type="password"]
@@ -84,8 +85,8 @@
             height: auto; /* 높이값 초기화 */
             line-height : normal; /* line-height 초기화 */
             padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
-            font-family: "Malgun Gothic", serif; /* 폰트 상속 */
-            font-size:2vh;
+            font-family: 'Piazzolla', serif;
+            font-size:1rem;
             border: 2px solid #D95204;
             
             border-radius: 2px; /* iSO 둥근모서리 제거 */
@@ -99,8 +100,8 @@
             height: auto; /* 높이값 초기화 */
             line-height : normal; /* line-height 초기화 */
             padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
-            font-family: "Malgun Gothic", serif; /* 폰트 상속 */
-            font-size:2vh;
+            font-family: 'Piazzolla', serif;
+            font-size:1rem;
             border: 1.5px solid #999;
             border-radius: 2px; /* iSO 둥근모서리 제거 */
             outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
@@ -157,7 +158,7 @@
             background: linear-gradient(to right, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
             margin: 0;
-            padding: 0.5em;
+            padding: 0.2rem;
             color: #FFF;
         }
         #header2 {
@@ -167,9 +168,10 @@
             text-align: left;
             background-color: #67BFAD;
             margin: 0;
-            padding: 0.5em;
+            padding: 0.2rem;
             color: #FFF;
         }
+
         #footer {
 		    text-align: center;
             background-color: #dce3e2;
@@ -186,17 +188,27 @@
             background-color: #fefff5;
             box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
         }
-	
+
+        h1,h2{
+            text-decoration: none;
+        }
+        h1{
+            font-family: 'Dancing Script', cursive;
+        }
+        h2{
+            font-size: 2em;
+            font-family: 'Patrick Hand', cursive;
+        }
     </style>
 
 </head>
 
 <body>
     <div id="header">
-        <h2>Cell Calculator</h2> <button class="button btnReset" onclick="init()">Reset</button><div style="flex-grow: 1;"></div><img style="width:30px; height:auto; margin-right:2rem; align-self: center;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"/>
+        <h1>Cell Calculator</h1> <button class="button btnReset" onclick="init()">Reset</button><div style="flex-grow: 1;"></div><img style="width:30px; height:auto; margin-right:2rem; align-self: center;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"/>
     </div>
     <div id="header2">
-        <h2>Cell Calculator</h2> <button class="button btnReset" onclick="init()">Reset</button>
+        <h1>Cell Calculator</h1> <button class="button btnReset" onclick="init()">Reset</button>
     </div>
     <div id="main">
     <h2>Total Cell Calculator</h2>
