@@ -50,6 +50,13 @@
             background-color:#00467F;
             transition: all 0.3s ease-in-out;
         }
+        .btn:active{
+            font-size: 1.0em;
+            background-color: rgba(0, 0, 0, 0);
+            border: 2px solid #ffc660;
+            color: #ffc660;
+            transition: all 0.3s ease-in-out;
+        }
         .btnReset:hover{
             font-size: 1.2rem;
             background-color:#ffc660;
@@ -340,6 +347,8 @@
                             <br>
                             <li>한꺼번에 값을 입력해놓고 'Cal'버튼을 누르면 이전 계산단계까지 한번에 자동으로 계산됩니다.</li>
                             <br>
+                            <li>필요한 값이 입력되지 않은 상태에서 'Cal'버튼을 누르면 입력이 필요한 값을 알려줍니다.</li>
+                            <br>
                             <li>'Reset'버튼을 누르면 입력했던, 계산했던 모든 값들이 초기화됩니다.</li>
                         </ul>
                         <br>
@@ -429,12 +438,17 @@
     }
     */
     function total_num_cal(){
-        var total_num = document.getElementById("total_num");
-        total_sum = 0;
-        var i;
-        for(i=1;i<=section_num;i++)
-            total_sum = Number(total_sum) + Number(document.getElementById('s'+i).value);
-        total_num.innerHTML = total_sum;
+        if(section_num==0){
+            alert("section num이 한 개도 존재하지 않습니다");
+        }
+        else{
+            var total_num = document.getElementById("total_num");
+            total_sum = 0;
+            var i;
+            for(i=1;i<=section_num;i++)
+                total_sum = Number(total_sum) + Number(document.getElementById('s'+i).value);
+            total_num.innerHTML = total_sum;
+        }
     }
     function total_cell_cal(){
         var total_cell = document.getElementById("total_cell");
