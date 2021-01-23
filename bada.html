@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cell Calculator</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Patrick+Hand&family=Satisfy&family=Piazzolla:wght@500&family=Noto+Sans+KR:wght@400;500&display=swap');  /* 구글 웹 폰트 */
-        @media (max-width:360px){html{font-size:10px;}}
-        @media (min-width:361px){html{font-size:10px;}}
-        @media (min-width:400px){html{font-size:10px;}}
-        @media (min-width:440px){html{font-size:10px;}}
-        @media (min-width:480px){html{font-size:10px;}}
-        @media (min-width:520px){html{font-size:11px;}}
-        @media (min-width:560px){html{font-size:11px;}}
-        @media (min-width:600px){html{font-size:11px;}}
-        @media (min-width:640px){html{font-size:12px;}}
-        @media (min-width:680px){html{font-size:13px;}}
-        @media (min-width:720px){html{font-size:14px;}}
-        @media (min-width:760px){html{font-size:15px;}}
+        :root{
+            --isPC: 1.1em;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@400;500&family=Patrick+Hand&family=Piazzolla:wght@500&family=Satisfy&display=swap');  /* 구글 웹 폰트 */
+        @media (max-width:360px){:root{--isPC:1.0em;}html{font-size:10px;}}
+        @media (min-width:361px){:root{--isPC:1.0em;}html{font-size:10px;}}
+        @media (min-width:400px){:root{--isPC:1.0em;}html{font-size:10px;}}
+        @media (min-width:440px){:root{--isPC:1.0em;}html{font-size:10px;}}
+        @media (min-width:480px){:root{--isPC:1.0em;}html{font-size:10px;}}
+        @media (min-width:520px){:root{--isPC:1.0em;}html{font-size:11px;}}
+        @media (min-width:560px){:root{--isPC:1.0em;}html{font-size:11px;}}
+        @media (min-width:600px){:root{--isPC:1.0em;}html{font-size:11px;}}
+        @media (min-width:640px){:root{--isPC:1.0em;}html{font-size:12px;}}
+        @media (min-width:680px){:root{--isPC:1.0em;}html{font-size:13px;}}
+        @media (min-width:720px){:root{--isPC:1.0em;}html{font-size:14px;}}
+        @media (min-width:760px){:root{--isPC:1.0em;}html{font-size:15px;}}
         @media (min-width:800px){html{font-size:16px;}}
         @media (min-width:840px){html{font-size:17px;}}
         @media (min-width:880px){html{font-size:18px;}}
-
+        
 
         .btn, .btnReset
         {
@@ -46,12 +49,12 @@
         }
         .btn:hover, .btnReset:hover{
             color: white;
-            font-size: 1.1em;
+            font-size: var(--isPC);
             background-color:#00467F;
             transition: all 0.3s ease-in-out;
         }
         .btn:active{
-            font-size: 1.0em;
+            font-size: var(--isPC);
             background-color: rgba(0, 0, 0, 0);
             border: 2px solid #ffc660;
             color: #ffc660;
