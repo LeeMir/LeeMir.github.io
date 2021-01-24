@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- 구글 웹 폰트 -->
+    <!-- Dancing Script, Patrick Hand, Piazzolla, Satisfy, Noto Sans KR -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@400;500&family=Patrick+Hand&family=Piazzolla:wght@500&family=Satisfy&display=swap" rel="stylesheet">
+    
     <title>Cell Calculator</title>
     <style>
+
+
+    /* 반응형 */
         :root{
             --isPC: 1.1em;
         }
@@ -26,46 +32,56 @@
         @media (min-width:800px){html{font-size:16px;}}
         @media (min-width:840px){html{font-size:17px;}}
         @media (min-width:880px){html{font-size:18px;}}
-        
-
-        .btn, .btnReset
-        {
-            border: 2px solid #00467F;
-            color:  #00467F;
-            outline: none;
-            cursor: pointer;
-            background: none;
-            border-radius: 5px;
+    
+    /* Body */
+        body {
+            z-index: 0;
+            margin: 0;
+            padding:0;
+            background-color: #fefff5;
+            box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
+        }
+        h1,h2{
+            text-decoration: none;
+        }
+        h1{
+            margin-left: 1%;
+            font-family: 'Dancing Script', cursive;
+        }
+        h2{
+            margin-left: 2.5%;
+            font-size: 2em;
             font-family: 'Patrick Hand', cursive;
-            transition: .5s;
-            font-size: 1em;
         }
-        .btnReset
-        {
-            border: 2px solid #ffc660;
-            color:  #ffc660;
-            font-size: 1.1rem;
-            margin-left:1rem;
-            height: auto;
-            align-self: center;
+    
+    /* Header */
+        #header {
+            display: flex;
+            flex-direction: row;
+            width:100%;
+            position:fixed;
+            z-index: 3;
+            text-align: left;
+            background: #00467F;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            margin: 0;
+            padding: 0.2rem;
+            color: #FFF;
         }
-        .btn:hover, .btnReset:hover{
-            color: white;
-            font-size: var(--isPC);
-            background-color:#00467F;
-            transition: all 0.3s ease-in-out;
+        #header2 {
+            display: flex;
+            flex-direction: row;
+            width:100%;
+            text-align: left;
+            background-color: #fefff5;
+            margin: 0;
+            padding: 0.2rem;
+            color: #fefff5;
         }
-        .btn:active{
-            font-size: var(--isPC);
-            background-color: rgba(0, 0, 0, 0);
-            border: 2px solid #ffc660;
-            color: #ffc660;
-            transition: all 0.3s ease-in-out;
-        }
-        .btnReset:hover{
-            font-size: 1.2rem;
-            background-color:#ffc660;
-        }
+
+    /* Container(Grid) */
         .container
         {
             width: 100%;
@@ -120,6 +136,59 @@
             -moz-appearance: none;
             appearance: none;
         }
+
+    /* Button */
+        .btn, .btnReset
+        {
+            border: 2px solid #00467F;
+            color:  #00467F;
+            outline: none;
+            cursor: pointer;
+            background: none;
+            border-radius: 5px;
+            font-family: 'Patrick Hand', cursive;
+            transition: .5s;
+            font-size: 1em;
+        }
+        .btnReset
+        {
+            border: 2px solid #ffc660;
+            color:  #ffc660;
+            font-size: 1.1rem;
+            margin-left:1rem;
+            height: auto;
+            align-self: center;
+        }
+        .btn:hover, .btnReset:hover{
+            color: white;
+            font-size: var(--isPC);
+            background-color:#00467F;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn:active{
+            font-size: var(--isPC);
+            background-color: rgba(0, 0, 0, 0);
+            border: 2px solid #ffc660;
+            color: #ffc660;
+            transition: all 0.3s ease-in-out;
+        }
+        .btnReset:hover{
+            font-size: 1.2rem;
+            background-color:#ffc660;
+        }
+        
+    /* Footer */
+        #footer {
+		    text-align: right;
+            background-color: #dce3e2;
+            margin-top:2em;
+		    padding: 0.5em;
+            box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
+            color: #555;
+            font-family: 'Satisfy', cursive;
+        }
+
+    /* Modal Popup */
         .modal_wrap{
             background-color:rgba(0,0,0,.3);
             justify-content:center;
@@ -200,62 +269,7 @@
             cursor:pointer;
         }
 
-        #header {
-            display: flex;
-            flex-direction: row;
-            width:100%;
-            position:fixed;
-            z-index: 3;
-            text-align: left;
-            background: #00467F;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-            margin: 0;
-            padding: 0.2rem;
-            color: #FFF;
-        }
-        #header2 {
-            display: flex;
-            flex-direction: row;
-            width:100%;
-            text-align: left;
-            background-color: #fefff5;
-            margin: 0;
-            padding: 0.2rem;
-            color: #fefff5;
-        }
-
-        #footer {
-		    text-align: right;
-            background-color: #dce3e2;
-            margin-top:2em;
-		    padding: 0.5em;
-            box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
-            color: #555;
-            font-family: 'Satisfy', cursive;
-        }
-
-        body {
-            z-index: 0;
-            margin: 0;
-            padding:0;
-            background-color: #fefff5;
-            box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
-        }
-
-        h1,h2{
-            text-decoration: none;
-        }
-        h1{
-            margin-left: 1%;
-            font-family: 'Dancing Script', cursive;
-        }
-        h2{
-            margin-left: 2.5%;
-            font-size: 2em;
-            font-family: 'Patrick Hand', cursive;
-        }
     </style>
 
 </head>
@@ -357,6 +371,19 @@
                             <li>'Reset'버튼을 누르면 입력했던, 계산했던 모든 값들이 초기화됩니다.</li>
                         </ul>
                         <br>
+                        <p style="font-size: 1.2em; margin-left: 0.5em"> 공식 정리</p>
+                        <ul>
+                            <li>Total Number = section 1 + section 2 +...+ section n</li>
+                            <br>
+                            <li>Total Cell = (Total Number) / (section num) * 2 * cell solution volume * 10^(section num)</li>
+                            <br>
+                            <li>Total Well = (well * plate) + 1</li>
+                            <br>
+                            <li>Seeding Volum = total volum * seeding * Total Well / Total Cell</li>
+                            <br>
+                            <li>1 Well Seeding = Seeding Volum / Total Well</li>
+                        </ul>
+                        <br>
                         <br>
                         <p style="text-align: right; font-family: 'Patrick Hand', cursive;">Designed By LeeMir :)</p>
                     </div>
@@ -371,6 +398,12 @@
     </div>
 </body>
 <script>
+
+    /*
+        Modal
+        onHelp() : Display modal
+        offHelp() : Close modal
+    */
     function onHelp() {
         document.getElementById('modal').style.display ='flex';
     }   
@@ -385,9 +418,15 @@
         }, 0);
     };
 
-
+    /* section_num, total_sum : global var */
     var section_num = 0;
     var total_sum = 0;
+
+    /*
+        section_text() : section num display
+        section_plus() : 'section n' text box add
+        section_minus() : 'section n' text box del
+    */ 
     function section_text(){
         var section_textbox = document.getElementById('section_num_box');
         section_textbox.innerHTML = section_num;
@@ -404,7 +443,7 @@
     }
     function section_minus(){
         if(section_num>0){
-            var section_delete = document.getElementById("s"+section_num);	//제거하고자 하는 엘리먼트
+            var section_delete = document.getElementById("s"+section_num);
             var parentNode = document.getElementById("cell_container");
             parentNode.removeChild(section_delete);
             section_delete = document.getElementById("se"+section_num);
@@ -417,6 +456,7 @@
             alert("더 제거할 section이 존재하지 않습니다!");
         }
     }
+    
     /*
     function visiable_sec(){
         var section_num =  Number(document.getElementById("section_num").value);
