@@ -399,28 +399,61 @@
 </body>
 <script>
 
-    /*
-        Modal
-        onHelp() : Display modal
-        offHelp() : Close modal
-    */
-    function onHelp() {
-        document.getElementById('modal').style.display ='flex';
-    }   
-    function offHelp(event) {
-        document.getElementById('modal').style.display ='none';
-    }
-    document.getElementById('modal').onclick = function(event) {
-        setTimeout(() => {
-            if(event.target.id==this.id) {
-                offHelp();
-            }
-        }, 0);
-    };
-
     /* section_num, total_sum : global var */
     var section_num = 0;
     var total_sum = 0;
+
+    /*
+        init() : init function => all section delete / all input make empty
+    */
+    function init(){
+        total_sum = 0;
+        var i;
+        for(i=section_num;i>0;i--)
+        {
+            var section_delete = document.getElementById("s"+section_num);	//제거하고자 하는 엘리먼트
+            var parentNode = document.getElementById("cell_container");
+            parentNode.removeChild(section_delete);
+            section_delete = document.getElementById("se"+section_num);
+            parentNode.removeChild(section_delete);
+            section_delete = document.getElementById("sec"+section_num);
+            parentNode.removeChild(section_delete);
+            section_num-=1;
+        }
+
+        var select = document.querySelectorAll('input');
+        for (i = 0; i < select.length; i++) {
+            select[i].value = '';
+        }
+
+        select = document.querySelectorAll('.text_box');
+        for (i = 0; i < select.length; i++) {
+            select[i].innerHTML = 0;
+        }
+    }
+
+    /*
+        visiable_sec() : section n visible/unvisible => Old Code(section_plus/minus로 대체)        
+    */
+    /*function visiable_sec(){
+        var section_num =  Number(document.getElementById("section_num").value);
+        if (section_num > 5){
+            alert("section_num <= 5");
+            return;
+        }       
+        var s1 = document.getElementById("S1");
+        var s2 = document.getElementById("S2");
+        var s3 = document.getElementById("S3");
+        var s4 = document.getElementById("S4");
+        var s5 = document.getElementById("S5");   
+        var ss = [s1,s2,s3,s4,s5];
+        for (var i=0;i<5;i++){
+            ss[i].style.visibility = "hidden";
+        }
+        for (var i=0;i<section_num;i++){
+            ss[i].style.visibility = "visible";
+        }
+    }*/
 
     /*
         section_text() : section num display
@@ -456,31 +489,14 @@
             alert("더 제거할 section이 존재하지 않습니다!");
         }
     }
-    
+
     /*
-    function visiable_sec(){
-        var section_num =  Number(document.getElementById("section_num").value);
-        if (section_num > 5){
-            alert("section_num <= 5");
-            return;
-        }
-            
-        var s1 = document.getElementById("S1");
-        var s2 = document.getElementById("S2");
-        var s3 = document.getElementById("S3");
-        var s4 = document.getElementById("S4");
-        var s5 = document.getElementById("S5");
-        
-        
-        var ss = [s1,s2,s3,s4,s5];
-        for (var i=0;i<5;i++){
-            ss[i].style.visibility = "hidden";
-        }
-        for (var i=0;i<section_num;i++){
-            ss[i].style.visibility = "visible";
-        }
-    
-    }
+        total_num_cal() : total num calculate
+        total_cell_cal() : total cell calculate
+        total_well_cal() : total well calculate
+        total_seeding_cell_cal() : total seeding cell calculate
+        seeding_vol_cal() : seeding volum calculate
+        one_well_seeding_cal() : 1 well seeding calculate
     */
     function total_num_cal(){
         if(section_num==0){
@@ -595,30 +611,25 @@
 
         one_well_seeding.innerHTML = one_well_seeding_value;
     }
-    function init(){
-        total_sum = 0;
-        var i;
-        for(i=section_num;i>0;i--)
-        {
-            var section_delete = document.getElementById("s"+section_num);	//제거하고자 하는 엘리먼트
-            var parentNode = document.getElementById("cell_container");
-            parentNode.removeChild(section_delete);
-            section_delete = document.getElementById("se"+section_num);
-            parentNode.removeChild(section_delete);
-            section_delete = document.getElementById("sec"+section_num);
-            parentNode.removeChild(section_delete);
-            section_num-=1;
-        }
 
-        var select = document.querySelectorAll('input');
-        for (i = 0; i < select.length; i++) {
-            select[i].value = '';
-        }
-
-        select = document.querySelectorAll('.text_box');
-        for (i = 0; i < select.length; i++) {
-            select[i].innerHTML = 0;
-        }
+    /*
+        Modal
+        onHelp() : Display modal
+        offHelp() : Close modal
+    */
+    function onHelp() {
+        document.getElementById('modal').style.display ='flex';
+    }   
+    function offHelp(event) {
+        document.getElementById('modal').style.display ='none';
     }
+    document.getElementById('modal').onclick = function(event) {
+        setTimeout(() => {
+            if(event.target.id==this.id) { // Distinguish modal background and modal window
+                offHelp();
+            }
+        }, 0);
+    };
+
 </script>
 </html>

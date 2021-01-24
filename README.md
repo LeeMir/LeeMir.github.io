@@ -48,6 +48,7 @@ This is MIR's programming study blog using "Prologue"(Jekyll Theme)
   ├ _config.yml
   ├ 404.html
   ├ blog.html
+  ├ cell_calculator.html
   ├ Gemfile
   ├ index.md
   ├ jekyll-theme-prologue.gemspec
