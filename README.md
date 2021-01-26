@@ -7,6 +7,7 @@
 This is MIR's programming study blog using "Prologue"(Jekyll Theme)
 
 ## Directory
+
 ```
 / ┬ _includes ┬ footer.html
   │           ├ google_analytics.html
@@ -48,7 +49,7 @@ This is MIR's programming study blog using "Prologue"(Jekyll Theme)
   ├ _config.yml
   ├ 404.html
   ├ blog.html
-  ├ cell_calculator.html
+  ├ cell_calculator.html(new!)
   ├ Gemfile
   ├ index.md
   ├ jekyll-theme-prologue.gemspec
@@ -58,11 +59,9 @@ This is MIR's programming study blog using "Prologue"(Jekyll Theme)
   └ snow-N-tree.html
 ```
 
-
 ## Thanks to
 
-* Jekyll
-* ChrisBobbe ( Contributor of jekyll-theme-prologue )
-* Drakmyth ( Contributor of jekyll-theme-prologue )
-* pajasevi ( Developer of CSSnowflakes )
-
+- Jekyll
+- ChrisBobbe ( Contributor of jekyll-theme-prologue )
+- Drakmyth ( Contributor of jekyll-theme-prologue )
+- pajasevi ( Developer of CSSnowflakes )
