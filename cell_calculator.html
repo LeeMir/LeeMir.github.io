@@ -458,7 +458,7 @@
     window.onload = function(){
         var IorA = navigator.userAgent.toLowerCase();
         
-        if(IorA.indexOf("iphone") !== -1 || IorA.indexOf("Android") !== -1){
+        if(IorA.indexOf("iphone") !== -1 || IorA.indexOf("android") !== -1){
             // iphone 일 때
             var select = document.querySelectorAll('label');
             for (i = 0; i < select.length; i++) {
@@ -544,7 +544,7 @@
             section_num += 1;
 
             var IorA = navigator.userAgent.toLowerCase();
-            if(IorA.indexOf("iphone") !== -1 || IorA.indexOf("Android") !== -1){ // 아이폰, 안드로이드 분기
+            if(IorA.indexOf("iphone") !== -1 || IorA.indexOf("android") !== -1){ // 아이폰, 안드로이드 분기
                 section_create.insertAdjacentHTML('beforebegin','<div class="textbox_container" id="section_'+section_num+'" style="flex-basis:3.3em;"><label for="s'+section_num+'" style="flex-grow:1.5;">section '+section_num+' :</label><input type="number" id="s'+section_num+'"/><div class="space"></div></div>');
             }else{
                 section_create.insertAdjacentHTML('beforebegin','<div class="textbox_container" id="section_'+section_num+'"><label for="s'+section_num+'">section '+section_num+' :</label><input type="number" id="s'+section_num+'"/><div class="space"></div></div>');
