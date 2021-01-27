@@ -112,7 +112,7 @@
         }
         label
         {
-            flex: 1 0 0;
+            flex: 0.7 0 0;
             text-align: right;
             font-family: 'Patrick Hand', cursive;
             font-size:1.5rem;
@@ -625,6 +625,16 @@
             }
         }, 0);
     };
-
+    window.onload = function(){
+        var IorA = navigator.userAgent.toLowerCase();
+        
+        if(IorA.indexOf("iphone") !== -1){
+            // iphone 일 때
+            var select = document.querySelectorAll('label');
+            for (i = 0; i < select.length; i++) {
+                select[i].style.cssText = 'flex-grow:1.1;';
+            }
+        }
+    }
 </script>
 </html>
