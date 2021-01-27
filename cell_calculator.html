@@ -514,7 +514,13 @@
         if(section_num<5){
             var section_create = document.getElementById('section_after');
             section_num += 1;
-            section_create.insertAdjacentHTML('beforebegin','<div class="textbox_container" id="section_'+section_num+'"><label for="s'+section_num+'">section '+section_num+' :</label><input type="number" id="s'+section_num+'"/><div class="space"></div></div>');
+
+            var IorA = navigator.userAgent.toLowerCase();
+            if(IorA.indexOf("iphone") !== -1){ // 아이폰 분기
+                section_create.insertAdjacentHTML('beforebegin','<div class="textbox_container" id="section_'+section_num+'"><label for="s'+section_num+'" style="flex-grow:1.5;">section '+section_num+' :</label><input type="number" id="s'+section_num+'"/><div class="space"></div></div>');
+            }else{
+                section_create.insertAdjacentHTML('beforebegin','<div class="textbox_container" id="section_'+section_num+'"><label for="s'+section_num+'">section '+section_num+' :</label><input type="number" id="s'+section_num+'"/><div class="space"></div></div>');
+            }
         }
         else{
             alert("더이상 section을 추가할 수 없습니다!");
