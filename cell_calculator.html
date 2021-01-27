@@ -88,6 +88,7 @@
             flex-wrap: nowrap;
             row-gap: 0.8em;
             margin-top:0;
+            height: 100%;
         }
         .textbox_container
         {
@@ -97,7 +98,6 @@
             justify-content: flex-end;
             align-items: center;
             flex-wrap: nowrap;
-            margin: 0.5em 0;
         }
         .btn_container
         {
@@ -296,7 +296,7 @@
                     <input type="button" class="btn" style="flex:0.5 0 0;" id="section_num" value="+" onclick="section_plus(); section_text();"></input>
                     <input type="button" class="btn" style="flex:0.5 0 0;" id="section_num" value="-" onclick="section_minus(); section_text();"></input>
                 </div>
-            </div><br>
+            </div>
             
             <div class="textbox_container" id="section_after">
                 <label for="total_num">total number : </label>
@@ -304,14 +304,14 @@
                 <div class="btn_container">
                     <input type="button" class="btn" value="Cal" onclick="total_num_cal()"/>
                 </div>
-            </div><br>
+            </div>
         
         
             <div class="textbox_container">
                 <label for="cell_sol_vol">cell solution volume(ml) :</label>
                 <input type="number" id="cell_sol_vol"/>
                 <div class="space"></div>
-            </div><br>
+            </div>
 
             <div class="textbox_container">
                 <label for="total_cell">total cell :</label>
@@ -319,7 +319,7 @@
                 <div class="btn_container">
                     <input type="submit" class="btn" value="Cal" onclick="total_cell_cal()"/>
                 </div>
-            </div><br>
+            </div>
 
             <br>
             <h2>Seed Vol Calculator</h2>
