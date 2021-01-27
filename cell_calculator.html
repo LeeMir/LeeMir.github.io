@@ -93,7 +93,7 @@
         .textbox_container
         {
             display: flex;
-            flex: 1 0 3em;
+            flex: 1 0 2.5em;
             flex-flow: row nowrap;
             justify-content: flex-end;
             align-items: center;
@@ -140,7 +140,7 @@
     /* Button */
         .btn, .btnReset
         {
-            flex: 1 0 0;
+            flex: 1 0 auto;
             border: 2px solid #00467F;
             color:  #00467F;
             outline: none;
@@ -632,7 +632,11 @@
             // iphone 일 때
             var select = document.querySelectorAll('label');
             for (i = 0; i < select.length; i++) {
-                select[i].style.cssText = 'flex-grow:1.1;';
+                select[i].style.cssText = 'flex-grow:1.5;';
+            }
+            select = document.querySelectorAll('.text_container');
+            for (i = 0; i < select.length; i++) {
+                select[i].style.cssText = 'flex-basis:3.5em;';
             }
         }
     }
