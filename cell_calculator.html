@@ -14,21 +14,19 @@
 
 
     /* 반응형 */
-        :root{
-            --isPC: 1.1em;
-        }
-        @media (max-width:360px){:root{--isPC:1.0em;}html{font-size:10px;}}
-        @media (min-width:361px){:root{--isPC:1.0em;}html{font-size:10px;}}
-        @media (min-width:400px){:root{--isPC:1.0em;}html{font-size:10px;}}
-        @media (min-width:440px){:root{--isPC:1.0em;}html{font-size:10px;}}
-        @media (min-width:480px){:root{--isPC:1.0em;}html{font-size:10px;}}
-        @media (min-width:520px){:root{--isPC:1.0em;}html{font-size:11px;}}
-        @media (min-width:560px){:root{--isPC:1.0em;}html{font-size:11px;}}
-        @media (min-width:600px){:root{--isPC:1.0em;}html{font-size:11px;}}
-        @media (min-width:640px){:root{--isPC:1.0em;}html{font-size:12px;}}
-        @media (min-width:680px){:root{--isPC:1.0em;}html{font-size:13px;}}
-        @media (min-width:720px){:root{--isPC:1.0em;}html{font-size:14px;}}
-        @media (min-width:760px){:root{--isPC:1.0em;}html{font-size:15px;}}
+        
+        @media (max-width:360px){html{font-size:10px;}}
+        @media (min-width:361px){html{font-size:10px;}}
+        @media (min-width:400px){html{font-size:10px;}}
+        @media (min-width:440px){html{font-size:10px;}}
+        @media (min-width:480px){html{font-size:10px;}}
+        @media (min-width:520px){html{font-size:11px;}}
+        @media (min-width:560px){html{font-size:11px;}}
+        @media (min-width:600px){html{font-size:11px;}}
+        @media (min-width:640px){html{font-size:12px;}}
+        @media (min-width:680px){html{font-size:13px;}}
+        @media (min-width:720px){html{font-size:14px;}}
+        @media (min-width:760px){html{font-size:15px;}}
         @media (min-width:800px){html{font-size:16px;}}
         @media (min-width:840px){html{font-size:17px;}}
         @media (min-width:880px){html{font-size:18px;}}
@@ -125,6 +123,7 @@
             padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
             font-family: 'Piazzolla', serif;
             font-size:1rem;
+            text-align: right;
             border: 2px solid #D95204;
             margin: 0 0.5em;
             border-radius: 5px; /* iSO 둥근모서리 제거 */
@@ -165,12 +164,10 @@
         }
         .btn:hover, .btnReset:hover{
             color: white;
-            font-size: var(--isPC);
             background-color:#00467F;
             transition: all 0.3s ease-in-out;
         }
         .btn:active{
-            font-size: var(--isPC);
             background-color: rgba(0, 0, 0, 0);
             border: 2px solid #ffc660;
             color: #ffc660;
@@ -640,7 +637,7 @@
             for (i = 0; i < select.length; i++) {
                 select[i].style.cssText = 'flex-grow:1.5;';
             }
-            select = document.querySelectorAll('.text_container');
+            select = document.querySelectorAll('.textbox_container');
             for (i = 0; i < select.length; i++) {
                 select[i].style.cssText = 'flex-basis:3.5em;';
             }
