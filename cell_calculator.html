@@ -117,7 +117,7 @@
         }
         input[type="number"], input[type="password"]
         {
-            flex: 1.3 0 0;
+            flex: 1.2 0 0;
             height: auto; /* 높이값 초기화 */
             line-height : normal; /* line-height 초기화 */
             padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
@@ -438,7 +438,24 @@
     </div>
 </body>
 <script>
-
+    /*
+        IOS flex-box column error catch
+    */
+    window.onload = function(){
+        var IorA = navigator.userAgent.toLowerCase();
+        
+        if(IorA.indexOf("iphone") !== -1){
+            // iphone 일 때
+            var select = document.querySelectorAll('label');
+            for (i = 0; i < select.length; i++) {
+                select[i].style.cssText = 'flex-grow:1.5;';
+            }
+            select = document.querySelectorAll('.textbox_container');
+            for (i = 0; i < select.length; i++) {
+                select[i].style.cssText = 'flex-basis:3.3em;';
+            }
+        }
+    }
     /* section_num, total_sum : global var */
     var section_num = 0;
     var total_sum = 0;
@@ -514,7 +531,7 @@
 
             var IorA = navigator.userAgent.toLowerCase();
             if(IorA.indexOf("iphone") !== -1){ // 아이폰 분기
-                section_create.insertAdjacentHTML('beforebegin','<div class="textbox_container" id="section_'+section_num+'"><label for="s'+section_num+'" style="flex-grow:1.5;">section '+section_num+' :</label><input type="number" id="s'+section_num+'"/><div class="space"></div></div>');
+                section_create.insertAdjacentHTML('beforebegin','<div class="textbox_container" id="section_'+section_num+'" style="flex-basis:3.3em;"><label for="s'+section_num+'" style="flex-grow:1.5;">section '+section_num+' :</label><input type="number" id="s'+section_num+'"/><div class="space"></div></div>');
             }else{
                 section_create.insertAdjacentHTML('beforebegin','<div class="textbox_container" id="section_'+section_num+'"><label for="s'+section_num+'">section '+section_num+' :</label><input type="number" id="s'+section_num+'"/><div class="space"></div></div>');
             }
@@ -628,20 +645,6 @@
             }
         }, 0);
     };
-    window.onload = function(){
-        var IorA = navigator.userAgent.toLowerCase();
-        
-        if(IorA.indexOf("iphone") !== -1){
-            // iphone 일 때
-            var select = document.querySelectorAll('label');
-            for (i = 0; i < select.length; i++) {
-                select[i].style.cssText = 'flex-grow:1.5;';
-            }
-            select = document.querySelectorAll('.textbox_container');
-            for (i = 0; i < select.length; i++) {
-                select[i].style.cssText = 'flex-basis:3.5em;';
-            }
-        }
-    }
+    
 </script>
 </html>
