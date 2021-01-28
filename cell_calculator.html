@@ -79,8 +79,7 @@
             color: #fefff5;
         }
     /* new Container(Flex-box) */
-        .container
-        {
+        .container{
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
@@ -88,8 +87,7 @@
             margin-top:0;
             height: 100%;
         }
-        .textbox_container
-        {
+        .textbox_container{
             display: flex;
             flex: 1 0 2.5em;
             flex-flow: row nowrap;
@@ -97,26 +95,22 @@
             align-items: center;
             flex-wrap: nowrap;
         }
-        .btn_container
-        {
+        .btn_container{
             flex: 0.5 0 0;
             display: flex;
             margin: 0 0.5em;
         }
-        .space /* 여백의 미 */
-        {
+        .space{ /* 여백의 미 */
             flex: 0.5 0 0;
             margin: 0 0.5em;
         }
-        label
-        {
+        label{
             flex: 0.7 0 0;
             text-align: right;
             font-family: 'Patrick Hand', cursive;
             font-size:1.5rem;
         }
-        input[type="number"], input[type="password"]
-        {
+        input[type="number"]{
             flex: 1.2 0 0;
             height: auto; /* 높이값 초기화 */
             line-height : normal; /* line-height 초기화 */
@@ -124,7 +118,7 @@
             font-family: 'Piazzolla', serif;
             font-size:1rem;
             text-align: right;
-            border: 2px solid #D95204;
+            border: 2px solid #A5CC82;
             margin: 0 0.5em;
             border-radius: 5px; /* iSO 둥근모서리 제거 */
             outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
@@ -132,15 +126,22 @@
             -moz-appearance: none;
             appearance: none;
         }
+        input[type="number"]:focus{
+            border: 2px solid #0575E6;
+            box-shadow: 0.1em 0.1em 0.2em 0.1em #ddd;
+        }
+        input[type="number"]:focus:required:invalid{
+            border: 2px solid #D95204;
+        }
         .text_box{
             border: 1.5px solid #999 !important;
+            box-shadow: none !important;
         }
 
     /* Button */
         .btn,
         .btnReset,
-        .btnPM
-        {
+        .btnPM{
             -webkit-appearance:none;
             -moz-appearance: none;
             flex: 1 0 auto;
@@ -156,8 +157,7 @@
             padding: .3em .5em;
             height: 100%;
         }
-        .btnReset
-        {
+        .btnReset{
             flex-grow: 0;
             border: 2px solid #ffc660;
             color:  #ffc660;
@@ -202,7 +202,13 @@
             color: #555;
             font-family: 'Satisfy', cursive;
         }
+    /* Tooltip text */
+        .tooltip-text{
+            position:relative;
+        }
+        .tooltip-text:hover:after{
 
+        }
     /* Modal Popup */
         .modal_wrap{
             background-color:rgba(0,0,0,.3);
@@ -291,7 +297,7 @@
 
 <body>
     <div id="header">
-        <h1>Cell Calculator</h1> <button class="btnReset" onclick="init()">Reset</button><div style="flex-grow: 1;"></div><img style="width:2em; height:auto; margin-right:2rem; align-self: center; cursor:pointer;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"></img>
+        <h1>Cell Calculator</h1> <button class="btnReset" onclick="init('All')">Reset</button><div style="flex-grow: 1;"></div><img style="width:2em; height:auto; margin-right:2rem; align-self: center; cursor:pointer;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"></img>
     </div>
     <div id="header2">
         <h1>Cell Calculator</h1>
@@ -459,7 +465,7 @@
         var IorA = navigator.userAgent.toLowerCase();
         
         if(IorA.indexOf("iphone") !== -1 || IorA.indexOf("android") !== -1){
-            // iphone 일 때
+            // iphone & android일 때
             var select = document.querySelectorAll('label');
             for (i = 0; i < select.length; i++) {
                 select[i].style.cssText = 'flex-grow:1.5;';
@@ -477,25 +483,38 @@
     /*
         init() : init function => all section delete / all input make empty
     */
-    function init(){
-        total_sum = 0;
-        var i;
-        for(i=section_num;i>0;i--)
-        {
-            var section_delete = document.getElementById("section_"+section_num);
-            var parentNode = document.getElementById("container");
-            parentNode.removeChild(section_delete);
-            section_num-=1;
-        }
+    function init(option){
+        if(option=='All') {
+            total_sum = 0;
+            var i;
+            for(i=section_num;i>0;i--) {
+                var section_delete = document.getElementById("section_"+section_num);
+                var parentNode = document.getElementById("container");
+                parentNode.removeChild(section_delete);
+                section_num-=1;
+            }
+        
 
-        var select = document.querySelectorAll('input');
-        for (i = 0; i < select.length; i++) {
-            if(select[i].className!='btn'&&select[i].className!='btnPM')
-                select[i].value = '';
-            if(select[i].className=='text_box')
-                select[i].value = 0;
+            var select = document.querySelectorAll('input');
+            for (i = 0; i < select.length; i++) {
+                if(select[i].className!='btn'&&select[i].className!='btnPM')
+                    select[i].value = '';
+                if(select[i].getAttribute("required")=='true') {
+                    select[i].removeAttribute("required");
+                }
+                if(select[i].className=='text_box') {
+                    select[i].value = 0;
+                }
+            }
         }
-
+        else if(option=='required') {
+            var select = document.querySelectorAll('input');
+            for (i = 0; i < select.length; i++) {
+                if(select[i].getAttribute("required")=='true') {
+                    select[i].removeAttribute("required");
+                }
+            }
+        }
     }
 
     /*
@@ -578,67 +597,110 @@
     function total_num_cal(){
         if(section_num==0){
             alert("section num이 한 개도 존재하지 않습니다");
+            return false;
         }
         else{
             total_sum = 0;
             var i;
-            for(i=1;i<=section_num;i++)
+            for(i=1;i<=section_num;i++) {
+                if(document.getElementById('s'+i).value=='') {
+                    document.getElementById('s'+i).setAttribute("required",true);
+                }
                 total_sum = Number(total_sum) + Number(document.getElementById('s'+i).value);
+            }
             document.getElementById("total_num").value = total_sum;
+            return true;
         }
     }
     function total_cell_cal(){
         var total_num = total_sum;
         var cell_sol_vol = Number(document.getElementById("cell_sol_vol").value);
 
-        total_num_cal();
-        total_num = total_sum;
-        
-        if(document.getElementById("cell_sol_vol").value=='')
-            document.getElementById("cell_sol_vol").setAttribute("required","true");
-        else {
-            document.getElementById("total_cell").value = total_num/section_num*2*cell_sol_vol*Math.pow(10,section_num);
-            document.getElementById("total_cell2").value = document.getElementById("total_cell").value;
+        if(total_num_cal()) {
+            total_num = total_sum;
+            
+            if(document.getElementById("cell_sol_vol").value=='') {
+                init("required");
+                document.getElementById("cell_sol_vol").setAttribute("required",true);
+                return false;
+            }
+            else {
+                document.getElementById("cell_sol_vol").removeAttribute("required");
+                document.getElementById("total_cell").value = total_num/section_num*2*cell_sol_vol*Math.pow(10,section_num);
+                document.getElementById("total_cell2").value = document.getElementById("total_cell").value;
+                return true;
+            }
+        } else {
+            return false;
         }
     }
     function total_well_cal(){
         var well = Number(document.getElementById("well").value);
         var plate = Number(document.getElementById("plate").value);
-        if(document.getElementById("well").value=='')
-            document.getElementById("well").setAttribute("required","true");
-        else if(document.getElementById("plate").value=='')
-            document.getElementById("plate").setAttribute("required","true");
-        else
+
+        if(document.getElementById("well").value=='') {
+            init("required");
+            document.getElementById("well").setAttribute("required",true);
+            return false;
+        }
+        else if(document.getElementById("plate").value=='') {
+            init("required");
+            document.getElementById("plate").setAttribute("required",true);
+            return false;
+        }
+        else {
+            document.getElementById("well").removeAttribute("required");
+            document.getElementById("plate").removeAttribute("required");
             document.getElementById("total_well").value = (well*plate)+1;
+            return true;
+        }
     }
     function total_seeding_cell_cal(){
-        total_well_cal();
-        var total_well = Number(document.getElementById("total_well").value);
-        var seeding = Number(document.getElementById("seeding").value);
 
-        if(document.getElementById("seeding").value=='')
-            document.getElementById("seeding").setAttribute("required","true");
-        else
-            document.getElementById("total_seeding_cell").value = total_well * seeding;
+        if(total_well_cal()) {
+            var total_well = Number(document.getElementById("total_well").value);
+            var seeding = Number(document.getElementById("seeding").value);
+
+            if(document.getElementById("seeding").value=='') {
+                init("required");
+                document.getElementById("seeding").setAttribute("required",true);
+                return false;
+            }
+            else {
+                document.getElementById("seeding").removeAttribute("required");
+                document.getElementById("total_seeding_cell").value = total_well * seeding;
+                return true;
+            }
+        } else {
+            return false;
+        }
     }
     function seeding_vol_cal(){
-        total_cell_cal();
-        total_seeding_cell_cal();
-        var total_cell = Number(document.getElementById("total_cell").value);
-        var total_seeding_cell = Number(document.getElementById("total_seeding_cell").value);
-        var total_vol = Number(document.getElementById("total_vol").value);
+        if(total_cell_cal()&&total_seeding_cell_cal()) {
+            var total_cell = Number(document.getElementById("total_cell").value);
+            var total_seeding_cell = Number(document.getElementById("total_seeding_cell").value);
+            var total_vol = Number(document.getElementById("total_vol").value);
         
-        if(document.getElementById("total_vol").value=='')
-            document.getElementById("total_vol").setAttribute("required","true");
-        else
-            document.getElementById("seeding_vol").value = total_vol*total_seeding_cell/total_cell;
+            if(document.getElementById("total_vol").value=='') {
+                init("required");
+                document.getElementById("total_vol").setAttribute("required",true);
+                return false;
+            }
+            else {
+                document.getElementById("total_vol").removeAttribute("required");
+                document.getElementById("seeding_vol").value = total_vol*total_seeding_cell/total_cell;
+                return true;
+            }
+        } else {
+            return false;
+        }
     }
     function one_well_seeding_cal(){
-        seeding_vol_cal();
-        total_well_cal();
-        var seeding_vol = Number(document.getElementById("seeding_vol").value);
-        var total_well = Number(document.getElementById("total_well").value);
-        document.getElementById("one_well_seeding").value = seeding_vol/total_well;
+        if(seeding_vol_cal()&&total_well_cal()) {
+            var seeding_vol = Number(document.getElementById("seeding_vol").value);
+            var total_well = Number(document.getElementById("total_well").value);
+            document.getElementById("one_well_seeding").value = seeding_vol/total_well;
+        }
     }
 
     /*
