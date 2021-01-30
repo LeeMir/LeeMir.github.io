@@ -230,7 +230,7 @@
             padding: 0.5em 0.8em;
             position: absolute;
             width: auto;
-            min-width: 10em;
+            min-width: 15em;
             max-width: 20em;
             word-wrap: break-word;
         
@@ -336,7 +336,10 @@
 
 <body>
     <div id="header">
-        <h1>Cell Calculator</h1> <button class="btnReset" onclick="init('All')" data-tooltip-text="모든 변동 사항을 초기화시킵니다.">Reset</button><div style="flex-grow: 1;"></div><img style="width:2em; height:auto; margin-right:2rem; align-self: center; cursor:pointer;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"></img>
+        <h1>Cell Calculator</h1>
+        <button class="btnReset" onclick="init('All')" data-tooltip-text="모든 변동 사항을 초기화합니다.">Reset</button>
+        <div style="flex-grow: 1;"></div>
+        <img style="width:2em; height:auto; margin-right:2rem; align-self: center; cursor:pointer;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"></img>
     </div>
     <div id="header2">
         <h1>Cell Calculator</h1>
@@ -365,7 +368,7 @@
         
             <div class="textbox_container">
                 <label for="cell_sol_vol">cell solution volume(ml) :</label>
-                <input type="number" id="cell_sol_vol" />
+                <input type="number" id="cell_sol_vol"/>
                 <div class="space"></div>
             </div>
 
@@ -644,11 +647,19 @@
             for(i=1;i<=section_num;i++) {
                 if(document.getElementById('s'+i).value=='') {
                     document.getElementById('s'+i).setAttribute("required",true);
+                    document.getElementById('s'+i).focus();
+                    alert('section '+i+'이(가) 비어있습니다!');
+                    return false;
                 }
                 total_sum = Number(total_sum) + Number(document.getElementById('s'+i).value);
             }
-            document.getElementById("total_num").value = total_sum;
-            return true;
+            if(total_sum==0) {
+                alert("total number는 0일 수 없습니다");
+                return false;
+            } else {
+                document.getElementById("total_num").value = total_sum;
+                return true;
+            }
         }
     }
     function total_cell_cal(){
@@ -667,6 +678,7 @@
                 document.getElementById("cell_sol_vol").removeAttribute("required");
                 document.getElementById("total_cell").value = total_num/section_num*2*cell_sol_vol*Math.pow(10,section_num);
                 document.getElementById("total_cell2").value = document.getElementById("total_cell").value;
+
                 return true;
             }
         } else {
