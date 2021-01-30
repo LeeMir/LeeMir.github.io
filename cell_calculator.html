@@ -203,11 +203,50 @@
             font-family: 'Satisfy', cursive;
         }
     /* Tooltip text */
-        .tooltip-text{
-            position:relative;
+        [data-tooltip-text]:hover {
+            position: relative;
         }
-        .tooltip-text:hover:after{
 
+        [data-tooltip-text]:after {
+            -webkit-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+            -moz-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+            transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
+        
+            background-color: rgba(0, 0, 0, 0.8);
+        
+            -webkit-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+            -moz-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+            box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
+        
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+        
+            color: #FFFFFF;
+            font-size: 0.6em;
+            font-family: 'Noto Sans KR', sans-serif;
+
+            margin-bottom: 0.7em;
+            padding: 0.5em 0.8em;
+            position: absolute;
+            width: auto;
+            min-width: 10em;
+            max-width: 20em;
+            word-wrap: break-word;
+        
+            z-index: 9999;
+        
+            opacity: 0;
+            left: -9999px;
+            top: 90%;
+        
+            content: attr(data-tooltip-text);
+        }
+
+        [data-tooltip-text]:hover:after {
+            top: 130%;
+            left: 0;
+            opacity: 1;
         }
     /* Modal Popup */
         .modal_wrap{
@@ -297,7 +336,7 @@
 
 <body>
     <div id="header">
-        <h1>Cell Calculator</h1> <button class="btnReset" onclick="init('All')">Reset</button><div style="flex-grow: 1;"></div><img style="width:2em; height:auto; margin-right:2rem; align-self: center; cursor:pointer;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"></img>
+        <h1>Cell Calculator</h1> <button class="btnReset" onclick="init('All')" data-tooltip-text="모든 변동 사항을 초기화시킵니다.">Reset</button><div style="flex-grow: 1;"></div><img style="width:2em; height:auto; margin-right:2rem; align-self: center; cursor:pointer;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"></img>
     </div>
     <div id="header2">
         <h1>Cell Calculator</h1>
@@ -326,7 +365,7 @@
         
             <div class="textbox_container">
                 <label for="cell_sol_vol">cell solution volume(ml) :</label>
-                <input type="number" id="cell_sol_vol"/>
+                <input type="number" id="cell_sol_vol" />
                 <div class="space"></div>
             </div>
 
@@ -711,10 +750,10 @@
     function onHelp() {
         document.getElementById('modal').style.display ='flex';
     }   
-    function offHelp(event) {
+    function offHelp() {
         document.getElementById('modal').style.display ='none';
     }
-    document.getElementById('modal').onclick = function(event) {
+    document.getElementById('modal').onclick = (event) => {
         setTimeout(() => {
             if(event.target.id==this.id) { // Distinguish modal background and modal window
                 offHelp();
