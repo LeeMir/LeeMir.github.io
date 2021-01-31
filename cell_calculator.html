@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,87 +8,171 @@
     <!-- 구글 웹 폰트 -->
     <!-- Dancing Script, Patrick Hand, Piazzolla, Satisfy, Noto Sans KR -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@400;500&family=Patrick+Hand&family=Piazzolla:wght@500&family=Satisfy&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@400;500&family=Patrick+Hand&family=Piazzolla:wght@500&family=Satisfy&display=swap"
+        rel="stylesheet">
+
     <title>Cell Calculator</title>
     <style>
+        /* 반응형 */
 
+        @media (max-width:360px) {
+            html {
+                font-size: 10px;
+            }
+        }
 
-    /* 반응형 */
-        
-        @media (max-width:360px){html{font-size:10px;}}
-        @media (min-width:361px){html{font-size:10px;}}
-        @media (min-width:400px){html{font-size:10px;}}
-        @media (min-width:440px){html{font-size:10px;}}
-        @media (min-width:480px){html{font-size:10px;}}
-        @media (min-width:520px){html{font-size:11px;}}
-        @media (min-width:560px){html{font-size:11px;}}
-        @media (min-width:600px){html{font-size:11px;}}
-        @media (min-width:640px){html{font-size:12px;}}
-        @media (min-width:680px){html{font-size:13px;}}
-        @media (min-width:720px){html{font-size:14px;}}
-        @media (min-width:760px){html{font-size:15px;}}
-        @media (min-width:800px){html{font-size:16px;}}
-        @media (min-width:840px){html{font-size:17px;}}
-        @media (min-width:880px){html{font-size:18px;}}
-    
-    /* Body */
+        @media (min-width:361px) {
+            html {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width:400px) {
+            html {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width:440px) {
+            html {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width:480px) {
+            html {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width:520px) {
+            html {
+                font-size: 11px;
+            }
+        }
+
+        @media (min-width:560px) {
+            html {
+                font-size: 11px;
+            }
+        }
+
+        @media (min-width:600px) {
+            html {
+                font-size: 11px;
+            }
+        }
+
+        @media (min-width:640px) {
+            html {
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width:680px) {
+            html {
+                font-size: 13px;
+            }
+        }
+
+        @media (min-width:720px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width:760px) {
+            html {
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width:800px) {
+            html {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width:840px) {
+            html {
+                font-size: 17px;
+            }
+        }
+
+        @media (min-width:880px) {
+            html {
+                font-size: 18px;
+            }
+        }
+
+        /* Body */
         body {
             z-index: 0;
             margin: 0;
-            padding:0;
+            padding: 0;
             background-color: #fefff5;
             box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
         }
-        h1,h2{
+
+        h1,
+        h2 {
             text-decoration: none;
         }
-        h1{
+
+        h1 {
             margin-left: 1%;
             font-family: 'Dancing Script', cursive;
         }
-        h2{
+
+        h2 {
             margin-left: 2.5%;
             font-size: 2em;
             font-family: 'Patrick Hand', cursive;
         }
-    
-    /* Header */
+
+        /* Header */
         #header {
             display: flex;
             flex-direction: row;
-            width:100%;
-            position:fixed;
+            width: 100%;
+            position: fixed;
             z-index: 3;
             text-align: left;
-            background: #00467F;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #00467F;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #A5CC82, #00467F);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #A5CC82, #00467F);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
             margin: 0;
             padding: 0.2rem;
             color: #FFF;
         }
+
         #header2 {
             display: flex;
             flex-direction: row;
-            width:100%;
+            width: 100%;
             text-align: left;
             background-color: #fefff5;
             margin: 0;
             padding: 0.2rem;
             color: #fefff5;
         }
-    /* new Container(Flex-box) */
-        .container{
+
+        /* new Container(Flex-box) */
+        .container {
             display: flex;
             flex-direction: column;
             flex-wrap: nowrap;
             row-gap: 0.8em;
-            margin-top:0;
+            margin-top: 0;
             height: 100%;
         }
-        .textbox_container{
+
+        .textbox_container {
             display: flex;
             flex: 1 0 2.5em;
             flex-flow: row nowrap;
@@ -95,58 +180,72 @@
             align-items: center;
             flex-wrap: nowrap;
         }
-        .btn_container{
+
+        .btn_container {
             flex: 0.5 0 0;
             display: flex;
             margin: 0 0.5em;
         }
-        .space{ /* 여백의 미 */
+
+        .space {
+            /* 여백의 미 */
             flex: 0.5 0 0;
             margin: 0 0.5em;
         }
-        label{
+
+        label {
             flex: 0.7 0 0;
             text-align: right;
             font-family: 'Patrick Hand', cursive;
-            font-size:1.5rem;
+            font-size: 1.5rem;
         }
-        input[type="number"]{
+
+        input[type="number"] {
             flex: 1.2 0 0;
-            height: auto; /* 높이값 초기화 */
-            line-height : normal; /* line-height 초기화 */
-            padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+            height: auto;
+            /* 높이값 초기화 */
+            line-height: normal;
+            /* line-height 초기화 */
+            padding: .3em .5em;
+            /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
             font-family: 'Piazzolla', serif;
-            font-size:1rem;
+            font-size: 1rem;
             text-align: right;
             border: 2px solid #A5CC82;
             margin: 0 0.5em;
-            border-radius: 5px; /* iSO 둥근모서리 제거 */
-            outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
-            -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */
+            border-radius: 5px;
+            /* iSO 둥근모서리 제거 */
+            outline-style: none;
+            /* 포커스시 발생하는 효과 제거를 원한다면 */
+            -webkit-appearance: none;
+            /* 브라우저별 기본 스타일링 제거 */
             -moz-appearance: none;
             appearance: none;
         }
-        input[type="number"]:focus{
+
+        input[type="number"]:focus {
             border: 2px solid #0575E6;
             box-shadow: 0.1em 0.1em 0.2em 0.1em #ddd;
         }
-        input[type="number"]:focus:required:invalid{
+
+        input[type="number"]:focus:required:invalid {
             border: 2px solid #D95204;
         }
-        .text_box{
+
+        .text_box {
             border: 1.5px solid #999 !important;
             box-shadow: none !important;
         }
 
-    /* Button */
+        /* Button */
         .btn,
         .btnReset,
-        .btnPM{
-            -webkit-appearance:none;
+        .btnPM {
+            -webkit-appearance: none;
             -moz-appearance: none;
             flex: 1 0 auto;
             border: 2px solid #00467F;
-            color:  #00467F;
+            color: #00467F;
             outline: none;
             cursor: pointer;
             background: none;
@@ -157,52 +256,58 @@
             padding: .3em .5em;
             height: 100%;
         }
-        .btnReset{
+
+        .btnReset {
             flex-grow: 0;
             border: 2px solid #ffc660;
-            color:  #ffc660;
+            color: #ffc660;
             font-size: 1.1rem;
-            margin-left:1rem;
+            margin-left: 1rem;
             height: auto;
             align-self: center;
             padding: 0 0.3em;
         }
+
         .btn:hover,
         .btnReset:hover,
-        .btnPM:hover{
+        .btnPM:hover {
             color: white;
-            background-color:#00467F;
+            background-color: #00467F;
             font-size: 1.1rem;
             border-radius: 10px;
             height: 100%;
             transition: all 0.3s ease-in-out;
         }
+
         .btnPM:hover {
             font-size: 1.0rem;
         }
+
         .btn:active,
-        .btnPM:active{
+        .btnPM:active {
             background-color: rgba(0, 0, 0, 0);
             border: 2px solid #ffc660;
             color: #ffc660;
             transition: all 0.3s ease-in-out;
         }
-        .btnReset:hover{
+
+        .btnReset:hover {
             font-size: 1.2rem;
-            background-color:#ffc660;
+            background-color: #ffc660;
         }
-        
-    /* Footer */
+
+        /* Footer */
         #footer {
             text-align: right;
             background-color: #dce3e2;
-            margin-top:2em;
+            margin-top: 2em;
             padding: 0.5em;
             box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
             color: #555;
             font-family: 'Satisfy', cursive;
         }
-    /* Tooltip text */
+
+        /* Tooltip text */
         [data-tooltip-text]:hover {
             position: relative;
         }
@@ -211,17 +316,17 @@
             -webkit-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
             -moz-transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
             transition: bottom .3s ease-in-out, opacity .3s ease-in-out;
-        
+
             background-color: rgba(0, 0, 0, 0.8);
-        
+
             -webkit-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
             -moz-box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
             box-shadow: 0px 0px 3px 1px rgba(50, 50, 50, 0.4);
-        
+
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
             border-radius: 5px;
-        
+
             color: #FFFFFF;
             font-size: 0.6em;
             font-family: 'Noto Sans KR', sans-serif;
@@ -233,13 +338,13 @@
             min-width: 15em;
             max-width: 20em;
             word-wrap: break-word;
-        
+
             z-index: 9999;
-        
+
             opacity: 0;
             left: -9999px;
             top: 90%;
-        
+
             content: attr(data-tooltip-text);
         }
 
@@ -248,38 +353,45 @@
             left: 0;
             opacity: 1;
         }
-    /* Modal Popup */
-        .modal_wrap{
-            background-color:rgba(0,0,0,.3);
-            justify-content:center;
-            align-items:center;
-            position:fixed;
-            top:0;
-            left:0;
-            right:0;
-            bottom:0;
-            display:none;
-            padding:1em;
+
+        /* Modal Popup */
+        .modal_wrap {
+            background-color: rgba(0, 0, 0, .3);
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            padding: 1em;
             z-index: 3;
         }
-        .modal{
-            width:100%;
-            max-width:30em;
-            background-color:#ffffff;
-            border-radius:1em;
-            overflow:hidden;
-            background: #00467F;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            box-shadow: 1em 2em 1em 0.1em rgba(0,0,0,.3);
+
+        .modal {
+            width: 100%;
+            max-width: 30em;
+            background-color: #ffffff;
+            border-radius: 1em;
+            overflow: hidden;
+            background: #00467F;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #A5CC82, #00467F);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #A5CC82, #00467F);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            box-shadow: 1em 2em 1em 0.1em rgba(0, 0, 0, .3);
         }
-        .modal_head{
-            width:100%;
-            height:3em;
-            display:flex;
-            align-items:center;
-            justify-content:center;
+
+        .modal_head {
+            width: 100%;
+            height: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         .modal_title {
             font-family: 'Dancing Script', cursive;
             color: #fff;
@@ -288,48 +400,52 @@
             text-align: center;
             margin-left: 1%;
         }
-        .modal_body{
-            width:100%;
-            background-color:#ffffff;
+
+        .modal_body {
+            width: 100%;
+            background-color: #ffffff;
         }
-        .modal_content{
-            width:100%;
-            padding:1em;
-            margin-left:-1em;
+
+        .modal_content {
+            width: 100%;
+            padding: 1em;
+            margin-left: -1em;
         }
-        .modal_content_titlebox{
-            text-align:left;
-            width:100%;
-            height:1.2em;
-            margin-bottom:1.2em;
+
+        .modal_content_titlebox {
+            text-align: left;
+            width: 100%;
+            height: 1.2em;
+            margin-bottom: 1.2em;
             font-family: 'Noto Sans KR', sans-serif;
-            font-weight:500;
+            font-weight: 500;
             font-size: 1.2em;
         }
-        .modal_contentbox{
-            word-break:break-word;
-            overflow-y:auto;
-            min-height:7em;
-            max-height:14em;
+
+        .modal_contentbox {
+            word-break: break-word;
+            overflow-y: auto;
+            min-height: 7em;
+            max-height: 14em;
             font-family: 'Noto Sans KR', sans-serif;
-            font-weight:400;
-        }
-        .modal_foot{
-            width:100%;
-            height:3em;
-        }
-        .modal_btn{
-            display:inline-flex;
-            width:100%;
-            height:100%;
-            float:left;
-            justify-content:center;
-            align-items:center;
-            color:#ffffff;
-            cursor:pointer;
+            font-weight: 400;
         }
 
+        .modal_foot {
+            width: 100%;
+            height: 3em;
+        }
 
+        .modal_btn {
+            display: inline-flex;
+            width: 100%;
+            height: 100%;
+            float: left;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -339,7 +455,8 @@
         <h1>Cell Calculator</h1>
         <button class="btnReset" onclick="init('All')" data-tooltip-text="모든 변동 사항을 초기화합니다.">Reset</button>
         <div style="flex-grow: 1;"></div>
-        <img style="width:2em; height:auto; margin-right:2rem; align-self: center; cursor:pointer;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"></img>
+        <img style="width:2em; height:auto; margin-right:2rem; align-self: center; cursor:pointer;" onclick="onHelp();"
+            src="https://img.icons8.com/ios/52/ffffff/info--v1.png"></img>
     </div>
     <div id="header2">
         <h1>Cell Calculator</h1>
@@ -352,31 +469,33 @@
                 <label for="section_num_box">section num : </label>
                 <input type="number" class="text_box" id="section_num_box" value="0" readonly></input>
                 <div class="btn_container">
-                    <input type="button" class="btnPM" style="flex:0.5 0 0;" id="section_num" value="+" onclick="section_plus(); section_text();"></input>
-                    <input type="button" class="btnPM" style="flex:0.5 0 0;" id="section_num" value="-" onclick="section_minus(); section_text();"></input>
+                    <input type="button" class="btnPM" style="flex:0.5 0 0;" id="section_num" value="+"
+                        onclick="section_plus(); section_text();"></input>
+                    <input type="button" class="btnPM" style="flex:0.5 0 0;" id="section_num" value="-"
+                        onclick="section_minus(); section_text();"></input>
                 </div>
             </div>
-            
+
             <div class="textbox_container" id="section_after">
                 <label for="total_num">total number : </label>
-                <input type="number" class="text_box" id="total_num" value="0" readonly/>
+                <input type="number" class="text_box" id="total_num" value="0" readonly />
                 <div class="btn_container">
-                    <input type="button" class="btn" value="Cal" onclick="total_num_cal()"/>
+                    <input type="button" class="btn" value="Cal" onclick="total_num_cal()" />
                 </div>
             </div>
-        
-        
+
+
             <div class="textbox_container">
                 <label for="cell_sol_vol">cell solution volume(ml) :</label>
-                <input type="number" id="cell_sol_vol"/>
+                <input type="number" id="cell_sol_vol" />
                 <div class="space"></div>
             </div>
 
             <div class="textbox_container">
                 <label for="total_cell">total cell :</label>
-                <input type="number" class="text_box" id="total_cell" value="0" readonly/>
+                <input type="number" class="text_box" id="total_cell" value="0" readonly />
                 <div class="btn_container">
-                    <input type="submit" class="btn" value="Cal" onclick="total_cell_cal()"/>
+                    <input type="submit" class="btn" value="Cal" onclick="total_cell_cal()" />
                 </div>
             </div>
 
@@ -385,7 +504,7 @@
 
             <div class="textbox_container">
                 <label for="total_cell2">total cell :</label>
-                <input type="number" class="text_box" id="total_cell2" value="0" readonly/>
+                <input type="number" class="text_box" id="total_cell2" value="0" readonly />
                 <div class="space"></div>
             </div>
 
@@ -415,33 +534,33 @@
 
             <div class="textbox_container">
                 <label for="total_well">total well :</label>
-                <input type="number" class="text_box" id="total_well" value="0" readonly/>
+                <input type="number" class="text_box" id="total_well" value="0" readonly />
                 <div class="btn_container">
-                    <input type="submit" class="btn" value="Cal" onclick="total_well_cal()"/>
+                    <input type="submit" class="btn" value="Cal" onclick="total_well_cal()" />
                 </div>
             </div>
 
             <div class="textbox_container">
                 <label for="total_seeding_cell">total seeding cell :</label>
-                <input type="number" class="text_box" id="total_seeding_cell" value="0" readonly/>
+                <input type="number" class="text_box" id="total_seeding_cell" value="0" readonly />
                 <div class="btn_container">
-                    <input type="submit" class="btn" value="Cal" onclick="total_seeding_cell_cal()"/>
+                    <input type="submit" class="btn" value="Cal" onclick="total_seeding_cell_cal()" />
                 </div>
             </div>
 
             <div class="textbox_container">
                 <label for="seeding_vol">seeding volum(㎕) :</label>
-                <input type="number" class="text_box" id="seeding_vol" value="0" readonly/>
+                <input type="number" class="text_box" id="seeding_vol" value="0" readonly />
                 <div class="btn_container">
-                    <input type="submit" class="btn" value="Cal" onclick="seeding_vol_cal()"/>
+                    <input type="submit" class="btn" value="Cal" onclick="seeding_vol_cal()" />
                 </div>
             </div>
 
             <div class="textbox_container">
                 <label for="one_well_seeding">1 well seeding(㎕) :</label>
-                <input type="number" class="text_box" id="one_well_seeding" value="0" readonly/>
+                <input type="number" class="text_box" id="one_well_seeding" value="0" readonly />
                 <div class="btn_container">
-                    <input type="submit" class="btn" value="Cal" onclick="one_well_seeding_cal()"/>
+                    <input type="submit" class="btn" value="Cal" onclick="one_well_seeding_cal()" />
                 </div>
             </div>
         </form>
@@ -479,7 +598,8 @@
                         <ul>
                             <li>Total Number = section 1 + section 2 +...+ section n</li>
                             <br>
-                            <li>Total Cell = (Total Number) / (section num) * 2 * cell solution volume * 10^(section num)</li>
+                            <li>Total Cell = (Total Number) / (section num) * 2 * cell solution volume * 10^(section
+                                num)</li>
                             <br>
                             <li>Total Well = (well * plate) + 1</li>
                             <br>
@@ -503,10 +623,10 @@
     /*
         IOS flex-box column error catch
     */
-    window.onload = function(){
+    window.onload = function () {
         var IorA = navigator.userAgent.toLowerCase();
-        
-        if(IorA.indexOf("iphone") !== -1 || IorA.indexOf("android") !== -1){
+
+        if (IorA.indexOf("iphone") !== -1 || IorA.indexOf("android") !== -1) {
             // iphone & android일 때
             var select = document.querySelectorAll('label');
             for (i = 0; i < select.length; i++) {
@@ -525,34 +645,34 @@
     /*
         init() : init function => all section delete / all input make empty
     */
-    function init(option){
-        if(option=='All') {
+    function init(option) {
+        if (option == 'All') {
             total_sum = 0;
             var i;
-            for(i=section_num;i>0;i--) {
-                var section_delete = document.getElementById("section_"+section_num);
+            for (i = section_num; i > 0; i--) {
+                var section_delete = document.getElementById("section_" + section_num);
                 var parentNode = document.getElementById("container");
                 parentNode.removeChild(section_delete);
-                section_num-=1;
+                section_num -= 1;
             }
-        
+
 
             var select = document.querySelectorAll('input');
             for (i = 0; i < select.length; i++) {
-                if(select[i].className!='btn'&&select[i].className!='btnPM')
+                if (select[i].className != 'btn' && select[i].className != 'btnPM')
                     select[i].value = '';
-                if(select[i].getAttribute("required")=='true') {
+                if (select[i].getAttribute("required") == 'true') {
                     select[i].removeAttribute("required");
                 }
-                if(select[i].className=='text_box') {
+                if (select[i].className == 'text_box') {
                     select[i].value = 0;
                 }
             }
         }
-        else if(option=='required') {
+        else if (option == 'required') {
             var select = document.querySelectorAll('input');
             for (i = 0; i < select.length; i++) {
-                if(select[i].getAttribute("required")=='true') {
+                if (select[i].getAttribute("required") == 'true') {
                     select[i].removeAttribute("required");
                 }
             }
@@ -586,8 +706,8 @@
         section_text() : section num display
         section_plus() : 'section n' text box add
         section_minus() : 'section n' text box del
-    */ 
-    function section_text(){
+    */
+    function section_text() {
         var section_textbox = document.getElementById('section_num_box');
         section_textbox.value = section_num;
     }
@@ -599,31 +719,31 @@
             <div class="space"></div>
         </div>
     */
-    function section_plus(){
-        if(section_num<5){
+    function section_plus() {
+        if (section_num < 5) {
             var section_create = document.getElementById('section_after');
             section_num += 1;
 
             var IorA = navigator.userAgent.toLowerCase();
-            if(IorA.indexOf("iphone") !== -1 || IorA.indexOf("android") !== -1){ // 아이폰, 안드로이드 분기
-                section_create.insertAdjacentHTML('beforebegin','<div class="textbox_container" id="section_'+section_num+'" style="flex-basis:3.3em;"><label for="s'+section_num+'" style="flex-grow:1.5;">section '+section_num+' :</label><input type="number" id="s'+section_num+'"/><div class="space"></div></div>');
-            }else{
-                section_create.insertAdjacentHTML('beforebegin','<div class="textbox_container" id="section_'+section_num+'"><label for="s'+section_num+'">section '+section_num+' :</label><input type="number" id="s'+section_num+'"/><div class="space"></div></div>');
+            if (IorA.indexOf("iphone") !== -1 || IorA.indexOf("android") !== -1) { // 아이폰, 안드로이드 분기
+                section_create.insertAdjacentHTML('beforebegin', '<div class="textbox_container" id="section_' + section_num + '" style="flex-basis:3.3em;"><label for="s' + section_num + '" style="flex-grow:1.5;">section ' + section_num + ' :</label><input type="number" id="s' + section_num + '"/><div class="space"></div></div>');
+            } else {
+                section_create.insertAdjacentHTML('beforebegin', '<div class="textbox_container" id="section_' + section_num + '"><label for="s' + section_num + '">section ' + section_num + ' :</label><input type="number" id="s' + section_num + '"/><div class="space"></div></div>');
             }
         }
-        else{
+        else {
             alert("더이상 section을 추가할 수 없습니다!");
         }
     }
-    
-    function section_minus(){
-        if(section_num>0){
-            var section_delete = document.getElementById("section_"+section_num);
+
+    function section_minus() {
+        if (section_num > 0) {
+            var section_delete = document.getElementById("section_" + section_num);
             var parentNode = document.getElementById("container");
             parentNode.removeChild(section_delete);
-            section_num-=1;
+            section_num -= 1;
         }
-        else{
+        else {
             alert("더 제거할 section이 존재하지 않습니다!");
         }
     }
@@ -636,24 +756,24 @@
         seeding_vol_cal() : seeding volum calculate
         one_well_seeding_cal() : 1 well seeding calculate
     */
-    function total_num_cal(){
-        if(section_num==0){
+    function total_num_cal() {
+        if (section_num == 0) {
             alert("section num이 한 개도 존재하지 않습니다");
             return false;
         }
-        else{
+        else {
             total_sum = 0;
             var i;
-            for(i=1;i<=section_num;i++) {
-                if(document.getElementById('s'+i).value=='') {
-                    document.getElementById('s'+i).setAttribute("required",true);
-                    document.getElementById('s'+i).focus();
-                    alert('section '+i+'이(가) 비어있습니다!');
+            for (i = 1; i <= section_num; i++) {
+                if (document.getElementById('s' + i).value == '') {
+                    document.getElementById('s' + i).setAttribute("required", true);
+                    document.getElementById('s' + i).focus();
+                    alert('section ' + i + '이(가) 비어있습니다!');
                     return false;
                 }
-                total_sum = Number(total_sum) + Number(document.getElementById('s'+i).value);
+                total_sum = Number(total_sum) + Number(document.getElementById('s' + i).value);
             }
-            if(total_sum==0) {
+            if (total_sum == 0) {
                 alert("total number는 0일 수 없습니다");
                 return false;
             } else {
@@ -662,21 +782,21 @@
             }
         }
     }
-    function total_cell_cal(){
+    function total_cell_cal() {
         var total_num = total_sum;
         var cell_sol_vol = Number(document.getElementById("cell_sol_vol").value);
 
-        if(total_num_cal()) {
+        if (total_num_cal()) {
             total_num = total_sum;
-            
-            if(document.getElementById("cell_sol_vol").value=='') {
+
+            if (document.getElementById("cell_sol_vol").value == '') {
                 init("required");
-                document.getElementById("cell_sol_vol").setAttribute("required",true);
+                document.getElementById("cell_sol_vol").setAttribute("required", true);
                 return false;
             }
             else {
                 document.getElementById("cell_sol_vol").removeAttribute("required");
-                document.getElementById("total_cell").value = total_num/section_num*2*cell_sol_vol*Math.pow(10,section_num);
+                document.getElementById("total_cell").value = total_num / section_num * 2 * cell_sol_vol * Math.pow(10, section_num);
                 document.getElementById("total_cell2").value = document.getElementById("total_cell").value;
 
                 return true;
@@ -685,36 +805,36 @@
             return false;
         }
     }
-    function total_well_cal(){
+    function total_well_cal() {
         var well = Number(document.getElementById("well").value);
         var plate = Number(document.getElementById("plate").value);
 
-        if(document.getElementById("well").value=='') {
+        if (document.getElementById("well").value == '') {
             init("required");
-            document.getElementById("well").setAttribute("required",true);
+            document.getElementById("well").setAttribute("required", true);
             return false;
         }
-        else if(document.getElementById("plate").value=='') {
+        else if (document.getElementById("plate").value == '') {
             init("required");
-            document.getElementById("plate").setAttribute("required",true);
+            document.getElementById("plate").setAttribute("required", true);
             return false;
         }
         else {
             document.getElementById("well").removeAttribute("required");
             document.getElementById("plate").removeAttribute("required");
-            document.getElementById("total_well").value = (well*plate)+1;
+            document.getElementById("total_well").value = (well * plate) + 1;
             return true;
         }
     }
-    function total_seeding_cell_cal(){
+    function total_seeding_cell_cal() {
 
-        if(total_well_cal()) {
+        if (total_well_cal()) {
             var total_well = Number(document.getElementById("total_well").value);
             var seeding = Number(document.getElementById("seeding").value);
 
-            if(document.getElementById("seeding").value=='') {
+            if (document.getElementById("seeding").value == '') {
                 init("required");
-                document.getElementById("seeding").setAttribute("required",true);
+                document.getElementById("seeding").setAttribute("required", true);
                 return false;
             }
             else {
@@ -726,31 +846,31 @@
             return false;
         }
     }
-    function seeding_vol_cal(){
-        if(total_cell_cal()&&total_seeding_cell_cal()) {
+    function seeding_vol_cal() {
+        if (total_cell_cal() && total_seeding_cell_cal()) {
             var total_cell = Number(document.getElementById("total_cell").value);
             var total_seeding_cell = Number(document.getElementById("total_seeding_cell").value);
             var total_vol = Number(document.getElementById("total_vol").value);
-        
-            if(document.getElementById("total_vol").value=='') {
+
+            if (document.getElementById("total_vol").value == '') {
                 init("required");
-                document.getElementById("total_vol").setAttribute("required",true);
+                document.getElementById("total_vol").setAttribute("required", true);
                 return false;
             }
             else {
                 document.getElementById("total_vol").removeAttribute("required");
-                document.getElementById("seeding_vol").value = total_vol*total_seeding_cell/total_cell;
+                document.getElementById("seeding_vol").value = total_vol * total_seeding_cell / total_cell;
                 return true;
             }
         } else {
             return false;
         }
     }
-    function one_well_seeding_cal(){
-        if(seeding_vol_cal()&&total_well_cal()) {
+    function one_well_seeding_cal() {
+        if (seeding_vol_cal() && total_well_cal()) {
             var seeding_vol = Number(document.getElementById("seeding_vol").value);
             var total_well = Number(document.getElementById("total_well").value);
-            document.getElementById("one_well_seeding").value = seeding_vol/total_well;
+            document.getElementById("one_well_seeding").value = seeding_vol / total_well;
         }
     }
 
@@ -760,18 +880,19 @@
         offHelp() : Close modal
     */
     function onHelp() {
-        document.getElementById('modal').style.display ='flex';
-    }   
+        document.getElementById('modal').style.display = 'flex';
+    }
     function offHelp() {
-        document.getElementById('modal').style.display ='none';
+        document.getElementById('modal').style.display = 'none';
     }
     document.getElementById('modal').onclick = (event) => {
         setTimeout(() => {
-            if(event.target.id==this.id) { // Distinguish modal background and modal window
+            if (event.target.id == this.id) { // Distinguish modal background and modal window
                 offHelp();
             }
         }, 0);
     };
-    
+
 </script>
+
 </html>
