@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,73 +8,204 @@
     <!-- 구글 웹 폰트 -->
     <!-- Dancing Script, Patrick Hand, Piazzolla, Satisfy, Noto Sans KR -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@400;500&family=Patrick+Hand&family=Piazzolla:wght@500&family=Satisfy&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@400;500&family=Patrick+Hand&family=Piazzolla:wght@500&family=Satisfy&display=swap"
+        rel="stylesheet">
+
     <title>Cell Calculator</title>
     <style>
-
-
-    /* 반응형 */
-        :root{
+        /* 반응형 */
+        :root {
             --isPC: 1.1em;
         }
-        @media (max-width:360px){:root{--isPC:1.0em;}html{font-size:10px;}}
-        @media (min-width:361px){:root{--isPC:1.0em;}html{font-size:10px;}}
-        @media (min-width:400px){:root{--isPC:1.0em;}html{font-size:10px;}}
-        @media (min-width:440px){:root{--isPC:1.0em;}html{font-size:10px;}}
-        @media (min-width:480px){:root{--isPC:1.0em;}html{font-size:10px;}}
-        @media (min-width:520px){:root{--isPC:1.0em;}html{font-size:11px;}}
-        @media (min-width:560px){:root{--isPC:1.0em;}html{font-size:11px;}}
-        @media (min-width:600px){:root{--isPC:1.0em;}html{font-size:11px;}}
-        @media (min-width:640px){:root{--isPC:1.0em;}html{font-size:12px;}}
-        @media (min-width:680px){:root{--isPC:1.0em;}html{font-size:13px;}}
-        @media (min-width:720px){:root{--isPC:1.0em;}html{font-size:14px;}}
-        @media (min-width:760px){:root{--isPC:1.0em;}html{font-size:15px;}}
-        @media (min-width:800px){html{font-size:16px;}}
-        @media (min-width:840px){html{font-size:17px;}}
-        @media (min-width:880px){html{font-size:18px;}}
-    
-    /* Body */
+
+        @media (max-width:360px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width:361px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width:400px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width:440px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width:480px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width:520px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 11px;
+            }
+        }
+
+        @media (min-width:560px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 11px;
+            }
+        }
+
+        @media (min-width:600px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 11px;
+            }
+        }
+
+        @media (min-width:640px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width:680px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 13px;
+            }
+        }
+
+        @media (min-width:720px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width:760px) {
+            :root {
+                --isPC: 1.0em;
+            }
+
+            html {
+                font-size: 15px;
+            }
+        }
+
+        @media (min-width:800px) {
+            html {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width:840px) {
+            html {
+                font-size: 17px;
+            }
+        }
+
+        @media (min-width:880px) {
+            html {
+                font-size: 18px;
+            }
+        }
+
+        /* Body */
         body {
             z-index: 0;
             margin: 0;
-            padding:0;
+            padding: 0;
             background-color: #fefff5;
             box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
         }
-        h1,h2{
+
+        h1,
+        h2 {
             text-decoration: none;
         }
-        h1{
+
+        h1 {
             margin-left: 1%;
             font-family: 'Dancing Script', cursive;
         }
-        h2{
+
+        h2 {
             margin-left: 2.5%;
             font-size: 2em;
             font-family: 'Patrick Hand', cursive;
         }
-    
-    /* Header */
+
+        /* Header */
         #header {
             display: flex;
             flex-direction: row;
-            width:100%;
-            position:fixed;
+            width: 100%;
+            position: fixed;
             z-index: 3;
             text-align: left;
-            background: #00467F;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #00467F;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #A5CC82, #00467F);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #A5CC82, #00467F);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
             margin: 0;
             padding: 0.2rem;
             color: #FFF;
         }
+
         #header2 {
             display: flex;
             flex-direction: row;
-            width:100%;
+            width: 100%;
             text-align: left;
             background-color: #fefff5;
             margin: 0;
@@ -81,9 +213,8 @@
             color: #fefff5;
         }
 
-    /* Container(Grid) */
-        .container
-        {
+        /* Container(Grid) */
+        .container {
             width: 100%;
             display: grid;
             grid-template-columns: 1.3fr 1.4fr 0.5fr;
@@ -91,57 +222,70 @@
             column-gap: 0.75em;
             margin-bottom: 0.5em;
         }
-        .btn_container
-        {
+
+        .btn_container {
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             margin: 0;
         }
 
-        label
-        {
+        label {
             width: 100%;
             text-align: right;
             font-family: 'Patrick Hand', cursive;
-            font-size:1.5rem;
+            font-size: 1.5rem;
         }
-        input[type="number"], input[type="password"]
-        {
+
+        input[type="number"],
+        input[type="password"] {
             width: 95%;
-            height: auto; /* 높이값 초기화 */
-            line-height : normal; /* line-height 초기화 */
-            padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+            height: auto;
+            /* 높이값 초기화 */
+            line-height: normal;
+            /* line-height 초기화 */
+            padding: .3em .5em;
+            /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
             font-family: 'Piazzolla', serif;
-            font-size:1rem;
+            font-size: 1rem;
             border: 2px solid #D95204;
-            
-            border-radius: 2px; /* iSO 둥근모서리 제거 */
-            outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
-            -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */
-            -moz-appearance: none;
-            appearance: none;
-        }
-        .text_box{
-            width: 95%;    
-            height: auto; /* 높이값 초기화 */
-            line-height : normal; /* line-height 초기화 */
-            padding: .3em .5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
-            font-family: 'Piazzolla', serif;
-            font-size:1rem;
-            border: 1.5px solid #999;
-            border-radius: 2px; /* iSO 둥근모서리 제거 */
-            outline-style: none; /* 포커스시 발생하는 효과 제거를 원한다면 */
-            -webkit-appearance: none; /* 브라우저별 기본 스타일링 제거 */
+
+            border-radius: 2px;
+            /* iSO 둥근모서리 제거 */
+            outline-style: none;
+            /* 포커스시 발생하는 효과 제거를 원한다면 */
+            -webkit-appearance: none;
+            /* 브라우저별 기본 스타일링 제거 */
             -moz-appearance: none;
             appearance: none;
         }
 
-    /* Button */
-        .btn, .btnReset
-        {
+        .text_box {
+            width: 95%;
+            height: auto;
+            /* 높이값 초기화 */
+            line-height: normal;
+            /* line-height 초기화 */
+            padding: .3em .5em;
+            /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
+            font-family: 'Piazzolla', serif;
+            font-size: 1rem;
+            border: 1.5px solid #999;
+            border-radius: 2px;
+            /* iSO 둥근모서리 제거 */
+            outline-style: none;
+            /* 포커스시 발생하는 효과 제거를 원한다면 */
+            -webkit-appearance: none;
+            /* 브라우저별 기본 스타일링 제거 */
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* Button */
+        .btn,
+        .btnReset {
             border: 2px solid #00467F;
-            color:  #00467F;
+            color: #00467F;
             outline: none;
             cursor: pointer;
             background: none;
@@ -150,76 +294,86 @@
             transition: .5s;
             font-size: 1em;
         }
-        .btnReset
-        {
+
+        .btnReset {
             border: 2px solid #ffc660;
-            color:  #ffc660;
+            color: #ffc660;
             font-size: 1.1rem;
-            margin-left:1rem;
+            margin-left: 1rem;
             height: auto;
             align-self: center;
         }
-        .btn:hover, .btnReset:hover{
+
+        .btn:hover,
+        .btnReset:hover {
             color: white;
             font-size: var(--isPC);
-            background-color:#00467F;
+            background-color: #00467F;
             transition: all 0.3s ease-in-out;
         }
-        .btn:active{
+
+        .btn:active {
             font-size: var(--isPC);
             background-color: rgba(0, 0, 0, 0);
             border: 2px solid #ffc660;
             color: #ffc660;
             transition: all 0.3s ease-in-out;
         }
-        .btnReset:hover{
+
+        .btnReset:hover {
             font-size: 1.2rem;
-            background-color:#ffc660;
+            background-color: #ffc660;
         }
-        
-    /* Footer */
+
+        /* Footer */
         #footer {
-		    text-align: right;
+            text-align: right;
             background-color: #dce3e2;
-            margin-top:2em;
-		    padding: 0.5em;
+            margin-top: 2em;
+            padding: 0.5em;
             box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.05), inset 0 0.1em 0.1em 0 rgba(0, 0, 0, 0.025);
             color: #555;
             font-family: 'Satisfy', cursive;
         }
 
-    /* Modal Popup */
-        .modal_wrap{
-            background-color:rgba(0,0,0,.3);
-            justify-content:center;
-            align-items:center;
-            position:fixed;
-            top:0;
-            left:0;
-            right:0;
-            bottom:0;
-            display:none;
-            padding:1em;
+        /* Modal Popup */
+        .modal_wrap {
+            background-color: rgba(0, 0, 0, .3);
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            padding: 1em;
             z-index: 3;
         }
-        .modal{
-            width:100%;
-            max-width:30em;
-            background-color:#ffffff;
-            border-radius:1em;
-            overflow:hidden;
-            background: #00467F;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            box-shadow: 1em 2em 1em 0.1em rgba(0,0,0,.3);
+
+        .modal {
+            width: 100%;
+            max-width: 30em;
+            background-color: #ffffff;
+            border-radius: 1em;
+            overflow: hidden;
+            background: #00467F;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #A5CC82, #00467F);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #A5CC82, #00467F);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            box-shadow: 1em 2em 1em 0.1em rgba(0, 0, 0, .3);
         }
-        .modal_head{
-            width:100%;
-            height:3em;
-            display:flex;
-            align-items:center;
-            justify-content:center;
+
+        .modal_head {
+            width: 100%;
+            height: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+
         .modal_title {
             font-family: 'Dancing Script', cursive;
             color: #fff;
@@ -228,119 +382,128 @@
             text-align: center;
             margin-left: 1%;
         }
-        .modal_body{
-            width:100%;
-            background-color:#ffffff;
+
+        .modal_body {
+            width: 100%;
+            background-color: #ffffff;
         }
-        .modal_content{
-            width:100%;
-            padding:1em;
-            margin-left:-1em;
+
+        .modal_content {
+            width: 100%;
+            padding: 1em;
+            margin-left: -1em;
         }
-        .modal_content_titlebox{
-            text-align:left;
-            width:100%;
-            height:1.2em;
-            margin-bottom:1.2em;
+
+        .modal_content_titlebox {
+            text-align: left;
+            width: 100%;
+            height: 1.2em;
+            margin-bottom: 1.2em;
             font-family: 'Noto Sans KR', sans-serif;
-            font-weight:500;
+            font-weight: 500;
             font-size: 1.2em;
         }
-        .modal_contentbox{
-            word-break:break-word;
-            overflow-y:auto;
-            min-height:7em;
-            max-height:14em;
+
+        .modal_contentbox {
+            word-break: break-word;
+            overflow-y: auto;
+            min-height: 7em;
+            max-height: 14em;
             font-family: 'Noto Sans KR', sans-serif;
-            font-weight:400;
-        }
-        .modal_foot{
-            width:100%;
-            height:3em;
-        }
-        .modal_btn{
-            display:inline-flex;
-            width:100%;
-            height:100%;
-            float:left;
-            justify-content:center;
-            align-items:center;
-            color:#ffffff;
-            cursor:pointer;
+            font-weight: 400;
         }
 
+        .modal_foot {
+            width: 100%;
+            height: 3em;
+        }
 
+        .modal_btn {
+            display: inline-flex;
+            width: 100%;
+            height: 100%;
+            float: left;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            cursor: pointer;
+        }
     </style>
 
 </head>
 
 <body>
     <div id="header">
-        <h1>Cell Calculator</h1> <button class="button btnReset" onclick="init()">Reset</button><div style="flex-grow: 1;"></div><img style="width:2em; height:auto; margin-right:2rem; align-self: center; cursor:pointer;" onclick="onHelp();" src="https://img.icons8.com/ios/52/ffffff/info--v1.png"/>
+        <h1>Cell Calculator</h1> <button class="button btnReset" onclick="init()">Reset</button>
+        <div style="flex-grow: 1;"></div><img
+            style="width:2em; height:auto; margin-right:2rem; align-self: center; cursor:pointer;" onclick="onHelp();"
+            src="https://img.icons8.com/ios/52/ffffff/info--v1.png" />
     </div>
     <div id="header2">
         <h1>Cell Calculator</h1>
     </div>
     <div id="main">
-    <h2>Total Cell Calculator</h2>
-    <div class="container">
-        <label>section num : </label>
-        <div class="text_box" id="section_num_box">0</div>
-        <div class="btn_container">
-            <button class="button btn" style="height: 100%;" id="section_num" onclick="section_plus(); section_text(); ">+</button>
-            <button class="button btn" style="height: 100%;" id="section_num" onclick="section_minus(); section_text(); ">-</button>
+        <h2>Total Cell Calculator</h2>
+        <div class="container">
+            <label>section num : </label>
+            <div class="text_box" id="section_num_box">0</div>
+            <div class="btn_container">
+                <button class="button btn" style="height: 100%;" id="section_num"
+                    onclick="section_plus(); section_text(); ">+</button>
+                <button class="button btn" style="height: 100%;" id="section_num"
+                    onclick="section_minus(); section_text(); ">-</button>
+            </div>
         </div>
-    </div>
-    <div class="container" id="cell_container">
+        <div class="container" id="cell_container">
 
-        <label id="section_after">total number : </label>
-        <div class = "text_box" id="total_num">0</div>
-        <button class="button btn" onclick="total_num_cal()">Cal</button>
+            <label id="section_after">total number : </label>
+            <div class="text_box" id="total_num">0</div>
+            <button class="button btn" onclick="total_num_cal()">Cal</button>
 
-        <label>cell solution volume(ml) :</label>
-        <input type="number" id="cell_sol_vol">
-        <div></div>
-        <label>total cell :</label>
-        <div class = "text_box" id="total_cell">0</div>
-        <button class="button btn" onclick="total_cell_cal()">Cal</button>
-    </div>
-    <br>
-    <h2>Seed Vol Calculator</h2>
-    <div class="container">
-        
-        <label>total cell :</label>
-        <div class = "text_box" id="total_cell2">0</div>
-        <div></div>
-        <label for="total_vol">total volum(㎕) :</label>
-        <input type="number" id="total_vol">
-        <div></div>
-        <label for="seeding">seeding :</label>
-        <input type="number" id="seeding">
-        <div></div>
-        <label for="well">well :</label>
-        <input type="number" id="well">
-        <div></div>
-        <label for="plate">plate :</label>
-        <input type="number" id="plate">
-        <div></div>
-        
-        <label>total well :</label>
-        <div class = "text_box" id="total_well">0</div>
-        <button class="button btn" onclick="total_well_cal()">Cal</button>
-        
-        <label>total seeding cell :</label>
-        <div class = "text_box" id="total_seeding_cell">0</div>
-        <button class="button btn" onclick="total_seeding_cell_cal()">Cal</button>
-        
-        <label>seeding volum(㎕) :</label>
-        <div class = "text_box" id="seeding_vol">0</div>
-        <button class="button btn" onclick="seeding_vol_cal()">Cal</button>
+            <label>cell solution volume(ml) :</label>
+            <input type="number" id="cell_sol_vol">
+            <div></div>
+            <label>total cell :</label>
+            <div class="text_box" id="total_cell">0</div>
+            <button class="button btn" onclick="total_cell_cal()">Cal</button>
+        </div>
+        <br>
+        <h2>Seed Vol Calculator</h2>
+        <div class="container">
 
-        <label>1 well seeding(㎕) :</label>
-        <div class = "text_box" id="one_well_seeding">0</div>
-        <button class="button btn" onclick="one_well_seeding_cal()">Cal</button>
+            <label>total cell :</label>
+            <div class="text_box" id="total_cell2">0</div>
+            <div></div>
+            <label for="total_vol">total volum(㎕) :</label>
+            <input type="number" id="total_vol">
+            <div></div>
+            <label for="seeding">seeding :</label>
+            <input type="number" id="seeding">
+            <div></div>
+            <label for="well">well :</label>
+            <input type="number" id="well">
+            <div></div>
+            <label for="plate">plate :</label>
+            <input type="number" id="plate">
+            <div></div>
 
-    </div>
+            <label>total well :</label>
+            <div class="text_box" id="total_well">0</div>
+            <button class="button btn" onclick="total_well_cal()">Cal</button>
+
+            <label>total seeding cell :</label>
+            <div class="text_box" id="total_seeding_cell">0</div>
+            <button class="button btn" onclick="total_seeding_cell_cal()">Cal</button>
+
+            <label>seeding volum(㎕) :</label>
+            <div class="text_box" id="seeding_vol">0</div>
+            <button class="button btn" onclick="seeding_vol_cal()">Cal</button>
+
+            <label>1 well seeding(㎕) :</label>
+            <div class="text_box" id="one_well_seeding">0</div>
+            <button class="button btn" onclick="one_well_seeding_cal()">Cal</button>
+
+        </div>
     </div>
     <div id="footer">
         &copy;BaDa & LeeMir. All rights reserved.
@@ -375,7 +538,8 @@
                         <ul>
                             <li>Total Number = section 1 + section 2 +...+ section n</li>
                             <br>
-                            <li>Total Cell = (Total Number) / (section num) * 2 * cell solution volume * 10^(section num)</li>
+                            <li>Total Cell = (Total Number) / (section num) * 2 * cell solution volume * 10^(section
+                                num)</li>
                             <br>
                             <li>Total Well = (well * plate) + 1</li>
                             <br>
@@ -387,8 +551,8 @@
                         <br>
                         <p style="text-align: right; font-family: 'Patrick Hand', cursive;">Designed By LeeMir :)</p>
                     </div>
-                  
-                  
+
+
                 </div>
             </div>
             <div class="modal_foot">
@@ -410,19 +574,18 @@
     /*
         init() : init function => all section delete / all input make empty
     */
-    function init(){
+    function init() {
         total_sum = 0;
         var i;
-        for(i=section_num;i>0;i--)
-        {
-            var section_delete = document.getElementById("s"+section_num);	//제거하고자 하는 엘리먼트
+        for (i = section_num; i > 0; i--) {
+            var section_delete = document.getElementById("s" + section_num);	//제거하고자 하는 엘리먼트
             var parentNode = document.getElementById("cell_container");
             parentNode.removeChild(section_delete);
-            section_delete = document.getElementById("se"+section_num);
+            section_delete = document.getElementById("se" + section_num);
             parentNode.removeChild(section_delete);
-            section_delete = document.getElementById("sec"+section_num);
+            section_delete = document.getElementById("sec" + section_num);
             parentNode.removeChild(section_delete);
-            section_num-=1;
+            section_num -= 1;
         }
 
         var select = document.querySelectorAll('input');
@@ -463,34 +626,34 @@
         section_text() : section num display
         section_plus() : 'section n' text box add
         section_minus() : 'section n' text box del
-    */ 
-    function section_text(){
+    */
+    function section_text() {
         var section_textbox = document.getElementById('section_num_box');
         section_textbox.innerHTML = section_num;
     }
-    function section_plus(){
-        if(section_num<5){
+    function section_plus() {
+        if (section_num < 5) {
             var section_create = document.getElementById('section_after');
             section_num += 1;
-            section_create.insertAdjacentHTML('beforebegin','<label id="se'+section_num+'" for="s'+section_num+'" >section '+section_num+' :</label><input type="number" id="s'+section_num+'"><div id="sec'+section_num+'"></div>');
+            section_create.insertAdjacentHTML('beforebegin', '<label id="se' + section_num + '" for="s' + section_num + '" >section ' + section_num + ' :</label><input type="number" id="s' + section_num + '"><div id="sec' + section_num + '"></div>');
         }
-        else{
+        else {
             alert("더이상 section을 추가할 수 없습니다!");
         }
     }
     /* 수정 예정 */
-    function section_minus(){
-        if(section_num>0){
-            var section_delete = document.getElementById("s"+section_num);
+    function section_minus() {
+        if (section_num > 0) {
+            var section_delete = document.getElementById("s" + section_num);
             var parentNode = document.getElementById("cell_container");
             parentNode.removeChild(section_delete);
-            section_delete = document.getElementById("se"+section_num);
+            section_delete = document.getElementById("se" + section_num);
             parentNode.removeChild(section_delete);
-            section_delete = document.getElementById("sec"+section_num);
+            section_delete = document.getElementById("sec" + section_num);
             parentNode.removeChild(section_delete);
-            section_num-=1;
+            section_num -= 1;
         }
-        else{
+        else {
             alert("더 제거할 section이 존재하지 않습니다!");
         }
     }
@@ -503,68 +666,68 @@
         seeding_vol_cal() : seeding volum calculate
         one_well_seeding_cal() : 1 well seeding calculate
     */
-    function total_num_cal(){
-        if(section_num==0){
+    function total_num_cal() {
+        if (section_num == 0) {
             alert("section num이 한 개도 존재하지 않습니다");
         }
-        else{
+        else {
             var total_num = document.getElementById("total_num");
             total_sum = 0;
             var i;
-            for(i=1;i<=section_num;i++)
-                total_sum = Number(total_sum) + Number(document.getElementById('s'+i).value);
+            for (i = 1; i <= section_num; i++)
+                total_sum = Number(total_sum) + Number(document.getElementById('s' + i).value);
             total_num.innerHTML = total_sum;
         }
     }
-    function total_cell_cal(){
+    function total_cell_cal() {
         var total_cell = document.getElementById("total_cell");
         var total_cell2 = document.getElementById("total_cell2");
         var total_num = total_sum;
         var cell_sol_vol = Number(document.getElementById("cell_sol_vol").value);
 
-        if(total_num==0){
+        if (total_num == 0) {
             total_num_cal();
             total_num = total_sum;
         }
-        
-        if(document.getElementById("cell_sol_vol").value==''){
+
+        if (document.getElementById("cell_sol_vol").value == '') {
             alert("cell solution volume을 입력하지 않았습니다");
         }
         else {
-            var total_cell_value = total_num/section_num*2*cell_sol_vol*Math.pow(10,section_num);
+            var total_cell_value = total_num / section_num * 2 * cell_sol_vol * Math.pow(10, section_num);
             total_cell.innerHTML = total_cell_value;
             total_cell2.innerHTML = total_cell_value;
         }
     }
-    function total_well_cal(){
+    function total_well_cal() {
         var well = Number(document.getElementById("well").value);
         var plate = Number(document.getElementById("plate").value);
-        if(document.getElementById("well").value==''){
+        if (document.getElementById("well").value == '') {
             alert("well을 입력하지 않았습니다");
         }
-        else if(document.getElementById("plate").value==''){
+        else if (document.getElementById("plate").value == '') {
             alert("plate를 입력하지 않았습니다");
         }
         else {
             var total_well = document.getElementById("total_well");
-            var total_cell_value = (well*plate)+1;
+            var total_cell_value = (well * plate) + 1;
             total_well.innerHTML = total_cell_value;
         }
     }
-    function total_seeding_cell_cal(){
+    function total_seeding_cell_cal() {
         var total_well = Number(document.getElementById("total_well").innerHTML);
         var seeding = Number(document.getElementById("seeding").value);
 
-        if(total_well==0) {
+        if (total_well == 0) {
             total_well_cal();
             total_well = Number(document.getElementById("total_well").innerHTML);
         }
-        
 
-        if(document.getElementById("seeding").value==''){
+
+        if (document.getElementById("seeding").value == '') {
             alert("seeding을 입력하지 않았습니다");
         }
-        else{
+        else {
             var total_seeding_cell = document.getElementById("total_seeding_cell");
             var total_seeding_cell_value = total_well * seeding;
 
@@ -572,47 +735,47 @@
         }
 
     }
-    function seeding_vol_cal(){
+    function seeding_vol_cal() {
         var total_vol = Number(document.getElementById("total_vol").value);
         var total_seeding_cell = Number(document.getElementById("total_seeding_cell").innerHTML);
         var total_cell = Number(document.getElementById("total_cell").innerHTML);
 
-        if(total_cell==0){
+        if (total_cell == 0) {
             total_cell_cal();
             total_cell = Number(document.getElementById("total_cell").innerHTML);
         }
-        
 
-        if(total_seeding_cell==0) {
+
+        if (total_seeding_cell == 0) {
             total_seeding_cell_cal();
             total_seeding_cell = Number(document.getElementById("total_seeding_cell").innerHTML);
         }
-        
-        if(document.getElementById("total_vol").value==''){
+
+        if (document.getElementById("total_vol").value == '') {
             alert("total volum을 입력하지 않았습니다");
         }
-        else{
+        else {
             var seeding_vol = document.getElementById("seeding_vol");
-            var seeding_vol_value = total_vol*total_seeding_cell/total_cell;
+            var seeding_vol_value = total_vol * total_seeding_cell / total_cell;
 
             seeding_vol.innerHTML = seeding_vol_value;
         }
     }
-    function one_well_seeding_cal(){
+    function one_well_seeding_cal() {
         var seeding_vol = Number(document.getElementById("seeding_vol").innerHTML);
         var total_well = Number(document.getElementById("total_well").innerHTML);
-        if(seeding_vol==0) {
+        if (seeding_vol == 0) {
             seeding_vol_cal();
             seeding_vol = Number(document.getElementById("seeding_vol").innerHTML);
         }
-        if(total_well==0) {
+        if (total_well == 0) {
             total_well_cal();
             total_well = Number(document.getElementById("total_well").innerHTML);
         }
-        
+
 
         var one_well_seeding = document.getElementById("one_well_seeding");
-        var one_well_seeding_value = seeding_vol/total_well;
+        var one_well_seeding_value = seeding_vol / total_well;
 
         one_well_seeding.innerHTML = one_well_seeding_value;
     }
@@ -623,18 +786,19 @@
         offHelp() : Close modal
     */
     function onHelp() {
-        document.getElementById('modal').style.display ='flex';
-    }   
-    function offHelp(event) {
-        document.getElementById('modal').style.display ='none';
+        document.getElementById('modal').style.display = 'flex';
     }
-    document.getElementById('modal').onclick = function(event) {
+    function offHelp(event) {
+        document.getElementById('modal').style.display = 'none';
+    }
+    document.getElementById('modal').onclick = function (event) {
         setTimeout(() => {
-            if(event.target.id==this.id) { // Distinguish modal background and modal window
+            if (event.target.id == this.id) { // Distinguish modal background and modal window
                 offHelp();
             }
         }, 0);
     };
 
 </script>
+
 </html>
