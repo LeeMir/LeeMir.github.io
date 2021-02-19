@@ -658,8 +658,9 @@
 
             var select = document.querySelectorAll('input');
             for (i = 0; i < select.length; i++) {
-                if (select[i].className != 'btn' && select[i].className != 'btnPM')
+                if (select[i].className != 'btn' && select[i].className != 'btnPM') {
                     select[i].value = '';
+                }
                 if (select[i].getAttribute("required") == 'true') {
                     select[i].removeAttribute("required");
                 }
