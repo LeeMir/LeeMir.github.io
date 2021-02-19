@@ -5,19 +5,6 @@
     align-items : center;
 }
 
-a:not(#introAnimation):not(#btn) {
-    text-decoration: none;
-    //color: inherit;
-    border-bottom: dotted 1px rgba(128, 128, 128, 0.5);
-    @include vendor('transition', ('color 0.35s ease-in-out', 'border-bottom-color 0.35s ease-in-out'));
-    outline: 0;
-
-    &:hover {
-        color: #E27689;
-        border-bottom-color: rgba(255, 255, 255, 0);
-    }
-}
-
 #btn{
     cursor:pointer;
     text-decoration: none;
