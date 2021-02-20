@@ -1,9 +1,13 @@
+.flexContainer {
+	display: flex;
+	flex-flow: row wrap;
+}
+
 $c-border: #9F2042;
 
 .sparkle {
-	max-width: 30em;
-	margin-left: 337px;
 	margin-bottom: 1em !important;
+	text-align: left;
 	&:hover {
 		cursor: pointer;
 	}
@@ -12,7 +16,7 @@ $c-border: #9F2042;
 .u-hover--sparkle {
 	box-sizing: border-box;
 	position: relative;
-	padding: 0.25em;
+	padding: 0.5em;
 	&::before,
 	&::after {
 		content: '';
