@@ -59,6 +59,11 @@
 		)
 	));
 
+/* Scroll hide */
+	::-webkit-scrollbar {
+		display: none;
+	}
+
 /* Basic */
 
 	body {
