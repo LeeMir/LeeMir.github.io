@@ -3,10 +3,18 @@
 	flex-flow: row wrap;
 }
 
+#about-me-img {
+	position:relative;
+	top:50%;
+	transform:translateY(-50%);
+	margin-right:1em;
+}
+
 $c-border: #9F2042;
 
 .sparkle {
-	margin-bottom: 1em !important;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 	text-align: left;
 	&:hover {
 		cursor: pointer;
