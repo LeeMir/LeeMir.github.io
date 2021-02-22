@@ -6,6 +6,7 @@ photo
 photo-alt
 auto-header
 content
+ishome
 {%- endcomment -%}
 
 {%- assign _title = include.title | default: 'Untitled' -%}
@@ -18,8 +19,11 @@ content
 {%- assign _class = 'shade-one cover dark' -%}
 {%- else -%}
 {%- assign _photo = '' -%}
+{%- if include.ishome -%}
+{%- capture _class -%}shade-{%- cycle 'two', 'three', 'four', 'three' -%} home{%- endcapture -%}
+{%- else -%}
 {%- capture _class -%}shade-{%- cycle 'two', 'three', 'four', 'three' -%}{%- endcapture -%}
-{%- capture _style -%}{%- endcapture -%}
+{%- endif -%}
 {%- endif -%}
 
 {%- if include.auto-header == 'none' -%}
