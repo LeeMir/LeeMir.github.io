@@ -20,7 +20,7 @@ ishome
 {%- else -%}
 {%- assign _photo = '' -%}
 {%- if include.ishome -%}
-{%- capture _class -%}shade-{%- cycle 'two', 'three', 'four', 'three' -%} home{%- endcapture -%}
+{%- capture _class -%}shade-{%- cycle 'two ', 'three ', 'four ', 'three ' -%}home{%- endcapture -%}
 {%- else -%}
 {%- capture _class -%}shade-{%- cycle 'two', 'three', 'four', 'three' -%}{%- endcapture -%}
 {%- endif -%}

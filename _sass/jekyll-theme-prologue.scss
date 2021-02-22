@@ -199,7 +199,6 @@
 	}
 
 /* Sections/Article */
-
 	section, article {
 		margin-bottom: 3em;
 
@@ -227,7 +226,11 @@
 			margin-left: 1.25em;
 		}
 	}
-
+	section.home {
+		display:flex;
+		height:100vh;
+		align-items: center;
+	}
 	a:not(#introAnimation):not(#btn) {
 		text-decoration: none;
 		//color: inherit;
