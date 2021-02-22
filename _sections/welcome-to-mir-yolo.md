@@ -2,6 +2,7 @@
 title: Fancy Meeting You Here!
 icon: fa-check
 order: 5
+ishome: true
 ---
 
 Welcome to My Blog!
