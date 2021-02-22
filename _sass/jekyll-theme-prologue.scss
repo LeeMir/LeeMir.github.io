@@ -220,6 +220,11 @@
 		.row > * {
 			padding-top: 0;
 		}
+		
+		.project-container {
+			width: 80%;
+			margin: auto;
+		}
 
 		ul, ol {
 			padding-left: 0.25em;
@@ -231,10 +236,7 @@
 		height:100vh;
 		align-items: center;
 	}
-	section.project-container {
-		width: 80%;
-		margin: auto;
-	}
+	
 	a:not(#introAnimation):not(#btn) {
 		text-decoration: none;
 		//color: inherit;
