@@ -220,17 +220,18 @@
 		.row > * {
 			padding-top: 0;
 		}
-		
-		.project-container {
-			width: 80%;
-			margin: auto;
-		}
 
 		ul, ol {
 			padding-left: 0.25em;
 			margin-left: 1.25em;
 		}
 	}
+	
+	.project-container {
+		width: 80%;
+		margin: auto;
+	}
+
 	section.home {
 		display:flex;
 		height:100vh;
