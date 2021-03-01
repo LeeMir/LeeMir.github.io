@@ -257,7 +257,7 @@
 	}
 
 	#goDown {
-		width:100%;
+		width:cal(100%-375px);
 		height:3em;
 		bottom:0;
 		position:fixed;
@@ -266,8 +266,7 @@
 		border-radius: 0;
 		background-color: rgba(0, 0, 0, 0);
 		color: rgba(0, 0, 0, 0);
-		transition: all, 0.5s;
-		text-decoration: none;
+		transition: all 0.5s ease-in-out;
 		text-align:center;
 		&:hover {
 			cursor:pointer;
@@ -276,7 +275,7 @@
 		}
 	}
 	#goUp {
-		width:100%;
+		width:cal(100%-375px);
 		height:3em;
 		top:0;
 		position:fixed;
@@ -285,7 +284,8 @@
 		border-radius: 0;
 		background-color: rgba(0, 0, 0, 0);
 		color: rgba(0, 0, 0, 0);
-		transition: all, 0.5s;
+		transition: all 0.5s ease-in-out;
+		text-align:center;
 		&:hover {
 			cursor:pointer;
 			background-color: rgba(0,0,0,0.25);
@@ -800,7 +800,10 @@
 			#main {
 				margin-left: 300px;
 			}
-
+			#goUp,
+			#goDown {
+				width:cal(100%-300px);
+			}
 	}
 
 /* Normal */
@@ -910,7 +913,10 @@
 			#main {
 				margin-left: 20%;
 			}
-
+			#goUp,
+			#goDown {
+				width:80%;
+			}
 	}
 
 /* Narrower */
