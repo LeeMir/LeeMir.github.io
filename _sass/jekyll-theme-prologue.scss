@@ -262,11 +262,15 @@
 		bottom:0;
 		position:fixed;
 		border:none;
+		border-bottom: none;
 		border-radius: 0;
 		background-color: rgba(0, 0, 0, 0);
 		color: rgba(0, 0, 0, 0);
 		transition: all, 0.5s;
+		text-decoration: none;
+		text-align:center;
 		&:hover {
+			cursor:pointer;
 			background-color: rgba(0,0,0,0.25);
 			color: #dedede;
 		}
@@ -277,11 +281,13 @@
 		top:0;
 		position:fixed;
 		border:none;
+		border-bottom: none;
 		border-radius: 0;
 		background-color: rgba(0, 0, 0, 0);
 		color: rgba(0, 0, 0, 0);
 		transition: all, 0.5s;
 		&:hover {
+			cursor:pointer;
 			background-color: rgba(0,0,0,0.25);
 			color: #dedede;
 		}
