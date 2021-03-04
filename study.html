@@ -1,0 +1,27 @@
+---
+layout: default
+title: Study
+icon: fa-pencil-alt
+order: 3
+---
+
+{%- include header.html -%}
+
+<!-- Main -->
+<div id="main">
+    <!-- Page -->
+    <article class="shade-two">
+        <div class="container">
+            <header>
+                <h2>{{- page.title -}}</h2>
+                {%- if page.subtitle -%}<p>{{- page.subtitle -}}</p>{%- endif -%}
+            </header>
+            <ul>
+                <li><a href="/categories/computer-networking.html">컴퓨터 통신</a></li>
+                <li><a href="/categories/computer-security.html">컴퓨터 보안</a></li>
+                <li><a href="/categories/windows-programming.html">윈도우즈 프로그래밍</a></li>
+                <li><a href="/categories/web-design.html">웹 디자인</a></li>
+            </ul>
+        </div>
+    </article>
+</div>
