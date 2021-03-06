@@ -2,7 +2,7 @@
 layout: default
 ---
 {%- assign cate = page.title -%}
-{%- assign _posts = site.categories[cate] | sort: 'date' | reverse -%}
+{%- assign _posts = site.categories[cate] | sort: 'collection' -%}
 {%- include header.html scrolly_nav=_posts -%}
 <!-- Main -->
 <div id="main">
