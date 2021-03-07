@@ -245,7 +245,7 @@
 		height: 150vh;
 	}
 	
-	a:not(#introAnimation):not(#btn) {
+	a:not(#introAnimation):not(#btn):not(#goUp):not(#goDown) {
 		text-decoration: none;
 		//color: inherit;
 		border-bottom: dotted 1px rgba(128, 128, 128, 0.5);
@@ -261,17 +261,23 @@
 		width:calc(100% - 375px);
 		height:3em;
 		position:fixed;
+		display:flex;
+		justify-content: center;
+		align-items: center;
 		border:none;
 		border-bottom: none;
 		border-radius: 0;
 		background-color: rgba(0, 0, 0, 0);
 		color: rgba(0, 0, 0, 0);
 		transition: all 0.5s ease-in-out;
-		text-align:center;
 		&:hover {
 			cursor:pointer;
 			background-color: rgba(0,0,0,0.25);
 			color: #dedede;
+		}
+		&:active {
+			background-color: rgba(0,0,0,0.5);
+			color: #E27689;
 		}
 	}
 	#goDown {
