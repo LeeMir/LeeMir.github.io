@@ -226,10 +226,6 @@
 			padding-left: 0.25em;
 			margin-left: 1.25em;
 		}
-		#cookie-project,
-		#about-me {
-			align-items: flex-start;
-		}
 	}
 	
 	.project-container {
@@ -244,9 +240,11 @@
 	}
 	section#cookie-project {
 		height:150vh;
+		align-items: flex-start;
 	}
 	section#about-me {
 		height: 150vh;
+		align-items: flex-start;
 	}
 	
 	a:not(#introAnimation):not(#btn):not(#goUp):not(#goDown) {
