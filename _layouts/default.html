@@ -12,12 +12,32 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 	{{- content -}}
 	{%- include footer.html -%}
 	<style>
-		/* customizable snowflake styling */
 		.snowflake {
-			color: rgb(224, 240, 240);
+			color: #e0e0e0;
 			font-size: 1em;
 			font-family: Arial, sans-serif;
-			text-shadow: 0 0 5px #000;
+			text-shadow: 0 0 3px#000
+		}
+
+		.snowflakeB {
+			color: #ddffff;
+			font-size: 1em;
+			font-family: Arial, sans-serif;
+			text-shadow: 0 0 3px#000
+		}
+
+		.snowflakeR {
+			color: #ffddff;
+			font-size: 1em;
+			font-family: Arial, sans-serif;
+			text-shadow: 0 0 3px#000
+		}
+
+		.snowflakeG {
+			color: #ffffdd;
+			font-size: 1em;
+			font-family: Arial, sans-serif;
+			text-shadow: 0 0 3px#000
 		}
 
 		@-webkit-keyframes snowflakes-fall {
@@ -94,111 +114,238 @@ Jekyll integration by Chris Bobbe | chrisbobbe.github.io
 		}
 
 		.snowflake:nth-of-type(1) {
-			left: 10%;
+			left: 11%;
 			-webkit-animation-delay: 1s, 1s;
 			animation-delay: 1s, 1s
 		}
 
 		.snowflake:nth-of-type(2) {
-			left: 20%;
+			left: 21%;
 			-webkit-animation-delay: 6s, .5s;
 			animation-delay: 6s, .5s
 		}
 
 		.snowflake:nth-of-type(3) {
-			left: 30%;
+			left: 31%;
 			-webkit-animation-delay: 4s, 2s;
 			animation-delay: 4s, 2s
 		}
 
 		.snowflake:nth-of-type(4) {
-			left: 40%;
+			left: 41%;
 			-webkit-animation-delay: 2s, 2s;
 			animation-delay: 2s, 2s
 		}
 
 		.snowflake:nth-of-type(5) {
-			left: 50%;
+			left: 51%;
 			-webkit-animation-delay: 8s, 3s;
 			animation-delay: 8s, 3s
 		}
 
-		.snowflake:nth-of-type(6) {
-			left: 60%;
-			-webkit-animation-delay: 6s, 2s;
-			animation-delay: 6s, 2s
+		.snowflakeR {
+			position: fixed;
+			top: -5%;
+			z-index: 9999;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: default;
+			-webkit-animation-name: snowflakes-fall, snowflakes-shake;
+			-webkit-animation-duration: 10s, 3s;
+			-webkit-animation-timing-function: linear, ease-in-out;
+			-webkit-animation-iteration-count: infinite, infinite;
+			-webkit-animation-play-state: running, running;
+			animation-name: snowflakes-fall, snowflakes-shake;
+			animation-duration: 10s, 3s;
+			animation-timing-function: linear, ease-in-out;
+			animation-iteration-count: infinite, infinite;
+			animation-play-state: running, running
 		}
 
-		.snowflake:nth-of-type(7) {
-			left: 70%;
+		.snowflakeR:nth-of-type(0) {
+			left: 62%;
+			-webkit-animation-delay: 3s, 2s;
+			animation-delay: 3s, 2s
+		}
+
+		.snowflakeR:nth-of-type(1) {
+			left: 72%;
 			-webkit-animation-delay: 2.5s, 1s;
 			animation-delay: 2.5s, 1s
 		}
 
-		.snowflake:nth-of-type(8) {
-			left: 80%;
+		.snowflakeR:nth-of-type(2) {
+			left: 82%;
 			-webkit-animation-delay: 1s, 0s;
 			animation-delay: 1s, 0s
 		}
 
-		.snowflake:nth-of-type(9) {
-			left: 90%;
+		.snowflakeR:nth-of-type(3) {
+			left: 92%;
 			-webkit-animation-delay: 3s, 1.5s;
 			animation-delay: 3s, 1.5s
 		}
 
-		.snowflake:nth-of-type(10) {
-			left: 25%;
+		.snowflakeR:nth-of-type(4) {
+			left: 27%;
 			-webkit-animation-delay: 2s, 0s;
 			animation-delay: 2s, 0s
 		}
 
-		.snowflake:nth-of-type(11) {
-			left: 65%;
-			-webkit-animation-delay: 4s, 2.5s;
-			animation-delay: 4s, 2.5s
+		.snowflakeR:nth-of-type(5) {
+			left: 67%;
+			-webkit-animation-delay: 1s, 2.5s;
+			animation-delay: 1s, 2.5s
+		}
+
+		.snowflakeG {
+			position: fixed;
+			top: -7%;
+			z-index: 9999;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: default;
+			-webkit-animation-name: snowflakes-fall, snowflakes-shake;
+			-webkit-animation-duration: 10s, 3s;
+			-webkit-animation-timing-function: linear, ease-in-out;
+			-webkit-animation-iteration-count: infinite, infinite;
+			-webkit-animation-play-state: running, running;
+			animation-name: snowflakes-fall, snowflakes-shake;
+			animation-duration: 10s, 3s;
+			animation-timing-function: linear, ease-in-out;
+			animation-iteration-count: infinite, infinite;
+			animation-play-state: running, running
+		}
+
+		.snowflakeG:nth-of-type(0) {
+			left: 38%;
+			-webkit-animation-delay: 3s, .5s;
+			animation-delay: 3s, .5s
+		}
+
+		.snowflakeG:nth-of-type(1) {
+			left: 58%;
+			-webkit-animation-delay: 2s, 1s;
+			animation-delay: 2s, 1s
+		}
+
+		.snowflakeG:nth-of-type(2) {
+			left: 88%;
+			-webkit-animation-delay: 5s, 2s;
+			animation-delay: 5s, 2s
+		}
+
+		.snowflakeG:nth-of-type(3) {
+			left: 78%;
+			-webkit-animation-delay: 1s, 0s;
+			animation-delay: 1s, 0s
+		}
+
+		.snowflakeG:nth-of-type(4) {
+			left: 18%;
+			-webkit-animation-delay: 4s, 2s;
+			animation-delay: 4s, 2s
+		}
+
+		.snowflakeG:nth-of-type(5) {
+			left: 48%;
+			-webkit-animation-delay: 2s, .5s;
+			animation-delay: 2s, .5s
+		}
+
+		.snowflakeB {
+			position: fixed;
+			top: -3%;
+			z-index: 9999;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: default;
+			-webkit-animation-name: snowflakes-fall, snowflakes-shake;
+			-webkit-animation-duration: 10s, 3s;
+			-webkit-animation-timing-function: linear, ease-in-out;
+			-webkit-animation-iteration-count: infinite, infinite;
+			-webkit-animation-play-state: running, running;
+			animation-name: snowflakes-fall, snowflakes-shake;
+			animation-duration: 10s, 3s;
+			animation-timing-function: linear, ease-in-out;
+			animation-iteration-count: infinite, infinite;
+			animation-play-state: running, running
+		}
+
+		.snowflakeB:nth-of-type(0) {
+			left: 95%;
+			-webkit-animation-delay: 4s, 1s;
+			animation-delay: 4s, 1s
+		}
+
+		.snowflakeB:nth-of-type(1) {
+			left: 9%;
+			-webkit-animation-delay: 1s, 2s;
+			animation-delay: 1s, 2s
+		}
+
+		.snowflakeB:nth-of-type(2) {
+			left: 29%;
+			-webkit-animation-delay: 6s, 4s;
+			animation-delay: 6s, 4s
+		}
+
+		.snowflakeB:nth-of-type(3) {
+			left: 59%;
+			-webkit-animation-delay: 3s, .5s;
+			animation-delay: 3s, .5s
+		}
+
+		.snowflakeB:nth-of-type(4) {
+			left: 19%;
+			-webkit-animation-delay: 2s, 1s;
+			animation-delay: 2s, 1s
+		}
+
+		.snowflakeB:nth-of-type(5) {
+			left: 69%;
+			-webkit-animation-delay: 3s, 2s;
+			animation-delay: 3s, 2s
 		}
 	</style>
-	<!--
 	<div class="snowflakes" aria-hidden="true">
-		<div class="snowflake">
-			❅
-		</div>
-		<div class="snowflake">
-			❆
-		</div>
-		<div class="snowflake">
-			❅
-		</div>
-		<div class="snowflake">
-			❆
-		</div>
-		<div class="snowflake">
-			❅
-		</div>
-		<div class="snowflake">
-			❆
-		</div>
-		<div class="snowflake">
-			❅
-		</div>
-		<div class="snowflake">
-			❆
-		</div>
-		<div class="snowflake">
-			❅
-		</div>
-		<div class="snowflake">
-			❆
-		</div>
-		<div class="snowflake">
-			❅
-		</div>
-		<div class="snowflake">
-			❆
-		</div>
+		<div class="snowflake">🏵</div>
+		<div class="snowflake">✿</div>
+		<div class="snowflake">❀</div>
+		<div class="snowflake">❁</div>
+		<div class="snowflake">✿</div>
+		<div class="snowflake">❀</div>
 	</div>
-	-->
+	<div class="snowflakes" aria-hidden="true">
+		<div class="snowflakeR">🏵</div>
+		<div class="snowflakeR">❀</div>
+		<div class="snowflakeR">✿</div>
+		<div class="snowflakeR">✿</div>
+		<div class="snowflakeR">❁</div>
+		<div class="snowflakeR">❀</div>
+	</div>
+	<div class="snowflakes" aria-hidden="true">
+		<div class="snowflakeB">✿</div>
+		<div class="snowflakeB">❁</div>
+		<div class="snowflakeB">❀</div>
+		<div class="snowflakeB">❁</div>
+		<div class="snowflakeB">❀</div>
+		<div class="snowflakeB">✿</div>
+	</div>
+	<div class="snowflakes" aria-hidden="true">
+		<div class="snowflakeG">☘</div>
+		<div class="snowflakeG">☘</div>
+		<div class="snowflakeG">🍀</div>
+		<div class="snowflakeG">☘</div>
+		<div class="snowflakeG">☘</div>
+		<div class="snowflakeG">☘</div>
+	</div>
 </body>
 
 </html>
