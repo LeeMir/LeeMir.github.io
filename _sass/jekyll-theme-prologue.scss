@@ -70,11 +70,13 @@
 
 /* Snowing */
 
-.snowflake {
-	color: #e0e0e0;
-	font-size: 1em;
-	font-family: Arial, sans-serif;
-	text-shadow: 0 0 3px#000;
+.snowflakes {
+	.snowflake {
+		color: #e0e0e0;
+		font-size: 1em;
+		font-family: Arial, sans-serif;
+		text-shadow: 0 0 3px#000;
+	}
 	.red {
 		color: #ffccdd;
 	}
