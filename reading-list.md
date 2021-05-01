@@ -4,6 +4,7 @@ subtitle: a list of study I interested
 layout: "page"
 icon: fa-book
 order: 4
+published: false
 ---
 1. GitHub - [github.com](https://github.com)
 2. WebHacking - [webhacking.kr](https://webhacking.kr)
