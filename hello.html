@@ -13,7 +13,7 @@ order: 5
                 const response = fetch("https://api.github.com/users/leemir", {
                     method:"GET",
                     headers: {
-                        Authorization: "token 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",
+                        Authorization: "token "+${{ secrets.MY_SECRET_TOKEN }},
                     },
                 });
                 return response.then(res=>res.json());
@@ -32,3 +32,5 @@ order: 5
         </script>
     </p>
 </div>
+
+<p> hello </p>
