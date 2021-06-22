@@ -9,11 +9,12 @@ order: 5
 <div class="author-comment-container">
     <p class="author-comment" id="leemir">
         <script type="text/javascript">
+            var key = process.env.MY_KEY;
             function getUser() {
                 const response = fetch("https://api.github.com/users/leemir", {
                     method:"GET",
                     headers: {
-                        Authorization: "token ${{ hello.env.WHO_TO_TRUST }}",
+                        Authorization: "token "+key,
                     },
                 });
                 return response.then(res=>res.json());
