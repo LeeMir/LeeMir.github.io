@@ -1,0 +1,34 @@
+---
+title: test
+subtitle: test
+layout: "page"
+icon: fa-book
+order: 5
+---
+
+<div class="author-comment-container">
+    <p class="author-comment" id="leemir">
+        <script type="text/javascript">
+            function getUser() {
+                const response = fetch("https://api.github.com/users/leemir", {
+                    method:"GET",
+                    headers: {
+                        Authorization: "token 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",
+                    },
+                });
+                return response.then(res=>res.json());
+            }
+            async function authorComment() {
+                var authorInfo = await getUser();
+                var authorComment = document.createTextNode(authorInfo.bio);
+                var parent = document.getElementById("leemir");
+                parent.appendChild(authorComment);
+                console.log(authorInfo.bio);
+                if(authorInfo.bio==null) {
+                    parent.parentNode.parentNode.removeChild(parent.parentNode);
+                }
+            }
+            authorComment();
+        </script>
+    </p>
+</div>
