@@ -9,6 +9,7 @@ order: 5
 <div class="author-comment-container">
     <p class="author-comment" id="leemir">
         <script type="text/javascript">
+            require("dotenv").config();
             var key = process.env.MY_KEY;
             function getUser() {
                 const response = fetch("https://api.github.com/users/leemir", {
