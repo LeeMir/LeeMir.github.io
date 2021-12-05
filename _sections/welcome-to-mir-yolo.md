@@ -5,9 +5,8 @@ order: 5
 ishome: true
 ---
 
-Welcome to My Blog!
-I'm Mir, studying Computer Science.
-I will upload what I studied at University to This Blog.
+I'm Mir, studying Computer Science in Univ. of Seoul.
 
-Thank you for visiting This Blog!
-Yolo :) (You Only Live Once)
+Thank you for visiting My Portfolio!
+
+Yolo :)
