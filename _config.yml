@@ -58,5 +58,5 @@ dribbble_url: https://holygod.tistory.com
 google_analytics:
 
 # The following settings are NECESSARY for the Prologue theme to run:
-theme: jekyll-theme-prologuee #jekyll-theme-prologue
+theme: jekyll-theme-hacker #jekyll-theme-prologue
 collections: [sections]
